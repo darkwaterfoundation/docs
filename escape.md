@@ -1,4 +1,4 @@
 # ESCAPE
 
-Welcome to the documentation site. This will, hopefully, enable you to get up and running with our boards,
+The ESCAPE board is used to drive up to 6 Servos and 6 ESC powered motors.
 
