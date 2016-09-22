@@ -33,6 +33,8 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 
 The SOAR board is a holder for advanced sensors. It is ideal for use with different robot control boards, or if you have a single sensor expansion board you want to switch between robots.
 
+![soar](/images/soar-450.png)
+
 - [Getting started]() setting up your SOAR board ready for use
 - [Adding an expansion board]() mounting an expansion board
 - [Reading data]() reading the sensor data
