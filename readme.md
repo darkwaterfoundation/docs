@@ -15,6 +15,7 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 - [Running stepper motors]()
 - [Using servos]()
 - [Set up RC Input]() 
+- [Expanding]()
 
 ## The Escape board
 
@@ -26,5 +27,12 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 - [Running ESC Motors]()
 - [Using Servos]()
 - [Set up RC Input]()
+- [Expanding]()
 
-## IMU Expansion
+## The SOAR board
+
+The SOAR board is a holder for advanced sensors. It is ideal for use with different robot control boards, or if you have a single sensor expansion board you want to switch between robots.
+
+- [Getting started]() setting up your SOAR board ready for use
+- [Adding an expansion board]() mounting an expansion board
+- [Reading data]() reading the sensor data
