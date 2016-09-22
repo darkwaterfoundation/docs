@@ -11,10 +11,10 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 ![640](/images/640-450.png)
 
 - [Getting started]() setting up your 640 board ready for use
-- [Powering motors]() 
+- [Running DC motors]() 
 - [Running stepper motors]()
-- [Servos]()
-- [RC Input]() 
+- [Using servos]()
+- [Set up RC Input]() 
 
 ## The Escape board
 
@@ -23,4 +23,8 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 ![escape](/images/escape-450.png)
 
 - [Getting started]() setting up your ESCAPE board ready for use
-- []() 
+- [Running ESC Motors]()
+- [Using Servos]()
+- [Set up RC Input]()
+
+## IMU Expansion
