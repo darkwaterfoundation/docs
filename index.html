@@ -29,11 +29,18 @@
     Flatdoc.run({
       fetcher: Flatdoc.github('darkwaterfoundation/docs', 'readme.md')
     });
+
+    $(document).on('flatdoc:ready', function() {
+      // Highlight all the codes
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });  
   </script>
 </head>
 <body role='flatdoc' class='large-brief'>
 
-  <!-- <div class='title-area title-card' style='background-image: url(https://unsplash.it/1920/1080/?image=403)'>
+  <div class='title-area title-card' style='background-image: url(https://unsplash.it/1920/1080/?image=403)'>
     <div class='in'>
       <div class='headline'>
         <h1>Documentation is easy.</h1>
@@ -41,7 +48,7 @@
         <h5><span>Flatdoc - Dark Theme</span></h5>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div class='header'>
     <div class='left'>

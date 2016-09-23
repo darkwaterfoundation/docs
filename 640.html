@@ -28,6 +28,13 @@
     Flatdoc.run({
       fetcher: Flatdoc.github('darkwaterfoundation/docs', '640.md')
     });
+
+    $(document).on('flatdoc:ready', function() {
+      // Highlight all the codes
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });  
   </script>
 </head>
 <body role='flatdoc'>
