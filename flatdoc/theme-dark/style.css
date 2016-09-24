@@ -290,7 +290,7 @@ a:hover {
   padding-left: 40px;
   padding-right: 40px;
   zoom: 1;
-  max-width: 66%;
+  max-width: 100%;
   background: #fff;
 }
 .content:before,
@@ -768,7 +768,17 @@ a.big.button:hover:visited {
   .menubar {
     display: none;
   }
+  body {
+    background: #ffffff;
+  }
 }
+
+@media (max-width: 1179px) {
+  body {
+    background: #ffffff;
+  }
+}
+
 @media (min-width: 768px) {
   .content-root {
     padding-left: 230px;
