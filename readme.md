@@ -11,11 +11,10 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 ![640](/images/640-450.png)
 
 - [Getting started]() setting up your 640 board ready for use
-- [Running DC motors]() 
-- [Running stepper motors]()
-- [Using servos]()
-- [Set up RC Input]() 
-- [Expanding]()
+- [Programming in Python]() the Python API and how to use it
+- [Programming in C++]() controlling the board in C++
+- [Set up RC Input]() reading input from your RC receiver
+- [Expanding]() adding extra expansion boards
 
 ## The ESCAPE board
 
@@ -24,10 +23,10 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 ![escape](/images/escape-450.png)
 
 - [Getting started]() setting up your ESCAPE board ready for use
-- [Running ESC Motors]()
-- [Using Servos]()
-- [Set up RC Input]()
-- [Expanding]()
+- [Programming in Python]() the Python API and how to use it
+- [Programming in C++]() controlling the board in C++
+- [Set up RC Input]() reading input from your RC receiver
+- [Expanding]() adding extra expansion boards
 
 ## The SOAR board
 
@@ -36,7 +35,12 @@ The SOAR board is a holder for advanced sensors. It is ideal for use with differ
 ![soar](/images/soar-450.png)
 
 - [Getting started]() setting up your SOAR board ready for use
-- [Adding an expansion board]() mounting an expansion board
+- [Adding an expansion board]() adding an expansion board
 - [Reading data]() reading the sensor data
 
 ## Tutorials
+
+We've put together a few tutorials to help you build functioning robots that you can then expand upon.
+
+- [Building the GrassShark]() coming soon
+- [Building the Buggy]() coming soon
