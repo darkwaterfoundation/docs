@@ -42,6 +42,8 @@ The SOAR board is a holder for advanced sensors. It is ideal for use with differ
 - [Adding an expansion board]() adding an expansion board
 - [Reading data]() reading the sensor data
 
+[Pre-Order a SOAR board >](https://darkwater.io/product/soar-expansion-board-holder/)
+
 ## Tutorials
 
 We've put together a few tutorials to help you build functioning robots that you can then expand upon.
