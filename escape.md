@@ -19,14 +19,6 @@ The ESCAPE board is used to drive up to 6 Servos and 6 ESC powered motors.
 ### Motor speed
 ### Servo control
 
-## Node.JS
-
-### Introduction
-### Import libraries
-### Drive a motor
-### Motor speed
-### Servo control
-
 ## C++
 
 ### Introduction

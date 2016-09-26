@@ -10,9 +10,9 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 
 ![640](/images/640-450.png)
 
-- [Getting started]() setting up your 640 board ready for use
-- [Programming in Python]() the Python API and how to use it
-- [Programming in C++]() controlling the board in C++
+- [Getting started](/640.html#introduction-getting-started) setting up your 640 board ready for use
+- [Programming in Python](/640.html#programming-the-640-python) the Python API and how to use it
+- [Programming in C++](/640.html#programming-the-640-c) controlling the board in C++
 - [Set up RC Input]() reading input from your RC receiver
 - [Expanding]() adding extra expansion boards
 
