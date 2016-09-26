@@ -16,6 +16,8 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 - [Set up RC Input]() reading input from your RC receiver
 - [Expanding]() adding extra expansion boards
 
+[Pre-Order a 640 board >](https://darkwater.io/product/640-dc-motor-control-board/)
+
 ## The ESCAPE board
 
 The ESCAPE (ESC-cape) board was designed to provide a method of using brushless motors rather than the DC motors.
@@ -27,6 +29,8 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 - [Programming in C++]() controlling the board in C++
 - [Set up RC Input]() reading input from your RC receiver
 - [Expanding]() adding extra expansion boards
+
+[Pre-Order an ESCAPE board >](https://darkwater.io/product/escape-esc-powered-motor-control-board/)
 
 ## The SOAR board
 
