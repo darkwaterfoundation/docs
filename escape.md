@@ -21,12 +21,26 @@ The Python libraries for the ESCAPE board and some example scripts are available
 $ git clone https://github.com/darkwaterfoundation/darkwater_python_escape.git
 ```
 
-### Example scripts
-
-Now that you have downloaded the ESCAPE libraries you should have a new directory called *darkwater_python_escape, so let's move into that directory
+Next you need to navigate into the new directory so enter:
 
 ``` bash
 $ cd ./darkwater_python_escape
+```
+
+And once in there we can install the libraries with:
+
+``` bash
+$ sudo python setup.py install
+```
+
+### Example scripts
+
+Once everything is installed we can have a play with the example scripts included in the download. As well as being useful to test each part of your board, they are also handy as a starting point when writing your own scrips.
+
+Let's move into the examples directory and take a look at what is there.
+
+``` bash
+$ cd ./examples
 ```
 
 If you list the files in this directory, you should see a few test scripts
@@ -57,7 +71,7 @@ Now you know everything works, it's time to write your own scripts. So create a 
 
 ``` python
 import time
-from darkwater_escape.darkwater_escape import dw_Controller, dw_Motor, dw_Servo
+from darkwater_escape import dw_Controller, dw_Motor, dw_Servo
 ```
 
 #### Create a controller
