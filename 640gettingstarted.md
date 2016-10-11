@@ -90,6 +90,20 @@ Make sure everything is lined up correctly - use extra plasticine to align conne
 
 ### Attach the header
 
+For this example we'll show you how to connect a stackable header, as it's the most complex.
+
+Due to the length of the stackable headers pins, it can sometimes be a hassle to get them through the holes on the board.
+
+We've found that if you slide up the spacer on the stackable header so that it is near the top, you can get the pins into the boards header holes a lot easier and then slide the spacer back down again.
+
+![640 spacer](/images/stacker-trick.png)
+
+Once you have your header in place, use some plasticine to make sure the board is level and then solder away. You should solder a single pin first, then make sure the header is level - if it isn't then apply the soldering iron to the pin again and move the header until it is correct.
+
+![640 header](/images/640-header.png)
+
+Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
+
 ## Setting up your Pi
 
 Before we can start using the 640 board we need to enable the interfaces that the board uses on your Raspberry Pi.
