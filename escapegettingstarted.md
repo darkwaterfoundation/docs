@@ -10,21 +10,23 @@ Before we start to assemble your board, we'll take a look at what each section i
 
 ##### CPPM / PPM-SUM
 
-![ESCAPE CPPM](/images/640-cppm.png)
+![ESCAPE CPPM](/images/escape-cppm.png)
 
 This is the connection that allows you connect a Radio Control (RC) receiver so that you can extend the range of control for your robot.
 
 ##### Motors
 
-![ESCAPE Motors](/images/640-motors.png)
+![ESCAPE Motors](/images/escape-motors.png)
 
 The ESCAPE board can control 6 independent motors. Each motor has a connection with three pins onto which you will plug the control wire from the motors ESC unit. The centre pin on the Motor connections aren't connected together. This is because the centre wire from an ESC sends 5v and having multiple 5v power supplies connected to each other can be very bad.
 
 ##### Servos
 
-![ESCAPE Servos](/images/640-servo.png)
+![ESCAPE Servos](/images/escape-servos.png)
 
 The ESCAPE board has connections for 6 Servos. They default to being powered by the ESCAPE boards power supply, but we can switch them to be powered by the Raspberry Pi by placing a jumper on the **POWER** pins (assuming the Raspberry Pi is powered via its USB port).
+
+![ESCAPE Power Pin](/images/escape-powerjumper.png)
 
 We can also power the Raspberry Pi by placing an ESC control wire on one of the Servo connects and using the 5v sent on its power wire with the **POWER** jumper in place.
 
@@ -32,19 +34,19 @@ We'll go into more detail on this later, so don't worry about it for now.
 
 ##### Power
 
-![ESCAPE Power](/images/640-power.png)
+![ESCAPE Power](/images/escape-power.png)
 
 The power connection should accept 5v DC - the power you connect here is isolated from your Raspberry Pi and only goes to the servos unless you have the **POWER** jumper in place.
 
 ##### Expansion area
 
-![640 Motors](/images/640-expansionarea.png)
+![640 Motors](/images/escape-expansionarea.png)
 
 This area to the right of the board is for adding extra expansion boards to increase the functionality available to you. For more information on adding expansion boards [look here](/expansionadding.html)
 
 ##### Address selection
 
-![640 Motors](/images/640-addressselection.png)
+![640 Motors](/images/escape-addressselection.png)
 
 The ESCAPE board uses I2C to control the motors. You can have a lot of I2C controlled boards on your Raspberry Pi at the same time, but each must have a unique address.
 
