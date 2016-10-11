@@ -215,18 +215,4 @@ s1.setPWMmS(2.0) # fully clockwise
 s1.setPWMmS(1.0) # fully counter clockwise
 ```
 
-
-## C++
-
-### Introduction
-### Install prerequisites
-### Drive a motor
-### Motor speed
-### Servo control
-### PPM integration
-
-## Expanding the board
-
-### Adding an expansion board
-
 ### Next steps
