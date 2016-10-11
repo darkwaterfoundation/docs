@@ -291,3 +291,5 @@ stepper1.step(200, dw_Controller.REVERSE, dw_Controller.DOUBLE)
 ```
 
 If you want more control and need to move two or more motors at the same time then you should use the **oneStep** command.
+
+### Next steps

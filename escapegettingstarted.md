@@ -51,3 +51,4 @@ This time when you are returned to the main menu, move down to the *Finish* opti
 
 You have now enabled the interfaces you need to use your board.
 
+### Next steps
