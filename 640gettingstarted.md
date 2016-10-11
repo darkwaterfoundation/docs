@@ -6,7 +6,7 @@ Welcome to the 640 board - this guide will describe all the features of the 640 
 
 ## Board layout
 
-Before we start to assemble your board, we'll take a look at what each section is and what it is for.
+Before we start to assemble your board, we'll take a look at what each section is and what it is for. Place your 640 board on a table in front of you and identify each area.
 
 ##### CPPM / PPM-SUM
 
@@ -34,9 +34,27 @@ The power connection can accept from 2v all the way up to 11v DC - the power you
 
 ##### Expansion area
 
+![640 Motors](/images/640-expansionarea.png)
+
+This area to the right of the board is for adding extra expansion boards to increase the functionality available to you. For more information on adding expansion boards [look here](/expansionadding.html)
 
 ##### Address selection
 
+![640 Motors](/images/640-addressselection.png)
+
+The 640 board uses I2C to control the motors. You can have a lot of I2C controlled boards on your Raspberry Pi at the same time, but each must have a unique address.
+
+We have set up the 640 board to use the address **0x60**. If you find that this conflicts with another board you want to use, and you can't change the address of that board, then you can use these 5 solder jumpers to change the 640 board address.
+
+###### How to change the address
+
+Each of the address pins (A0 - A4) can be set to 0 (un-soldered) or 1 (soldered). You set an address pin to 1 by adding solder to each pad of the address pin until the two parts join.
+
+![Solder Jumpers by Adafruit](/images/solder_jumpers.jpg)
+
+Each address jumper has a binary value - A0 = 1, A1 = 2, A3 = 4, A4 = 8
+
+The starting address for the 640 board is 0x60 - if we solder jumper A0 then the address will be 0x60 + 1 = 0x61. Soldering A0 and A1 will give us 0x60 + 1 + 2 = 0x63
 
 ## Setup your 640
 
