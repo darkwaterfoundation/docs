@@ -64,6 +64,72 @@ The starting address for the ESCAPE board is 0x61 - if you look closely at the j
 
 If we solder jumper A1 then the address will be 0x61 + 2 = 0x63. Soldering A1 and A2 will give us 0x61 + 2 + 4 = 0x67
 
+## Setup your ESCAPE
+
+Now that we know what each part of the board is for, it's time to solder all the connections - it doesn't matter what order you attach the connections to your board, but we've found that the order below is the simplest.
+
+### Assemble the parts
+
+**IMPORTANT** - if you have an expansion board that you want to add to your 640 board, then you should add that first as it will be a lot easier than adding it after soldering connectors to the board.
+
+![ESCAPE parts](/images/escape-parts.png)
+
+As we don't know what headers and connectors you selected when you ordered your ESCAPE board - we're going to show you how to connect the most common selection - other connectors and headers should attach in the same way.
+
+*Hint* - A lump of plasticine or clay is very useful to hold your board level.
+
+### Attach the 2 pin Power jumper
+
+The small 2 pin jumper is the first part to put in place. It goes in the two holes labelled **POWER**. 
+
+![ESCAPE jumper](/images/escape-jumper.png)
+
+Place it in the holes but don't solder it in place yet.
+
+![ESCAPE jumper in place](/images/escape-jumperinplace.png)
+
+### Attach the 7 pin motor header and 6 pin servo header
+
+The next parts to slot into place are the 7 x 3 connector for the CPPM and motors and the 6 x 3 connector for the servos. The holes for these parts are aligned so that the connectors should fit tightly and be held in place.
+
+![ESCAPE 3 pin](/images/escape-3pin.png)
+
+Slot them in place, and then using a piece of paper or card to hold the connectors in place, turn the board over.
+
+Slide the paper away and use a piece of plasticine or clay to keep the board level on your desk if needed.
+
+![ESCAPE 3 solder pin](/images/escape-solder3pin.png)
+
+Solder all the pins in place - if you solder a single pin on each connector initially, then you can check if they are level and aligned correctly.
+
+If they aren't then apply the soldering iron tip to the soldered pin and move the connector until it is level.
+
+### Attach the power terminal
+
+Now we need to add the power connector - slot it in place making sure that you have it the right way around (for the screw terminals the holes should be at the front of the board).
+
+Use a piece of paper or card to hold the connector in place and turn the board upside down. Slide the paper out from under the board and use a piece of plasticine to prop the board up level.
+
+![ESCAPE terminal](/images/escape-screwterminals.png)
+
+Make sure everything is lined up correctly - use extra plasticine to align connectors if needed. Once you are happy, solder each of the pins.
+
+### Attach the header
+
+For this example we'll show you how to connect a stackable header, as it's the most complex.
+
+Due to the length of the stackable headers pins, it can sometimes be a hassle to get them through the holes on the board.
+
+We've found that if you slide up the spacer on the stackable header so that it is near the top, you can get the pins into the boards header holes a lot easier and then slide the spacer back down again.
+
+![ESCAPE spacer](/images/stacker-trick.png)
+
+Once you have your header in place, use some plasticine to make sure the board is level and then solder away. You should solder a single pin first, then make sure the header is level - if it isn't then apply the soldering iron to the pin again and move the header until it is correct.
+
+![ESCAPE header](/images/escape-header.png)
+
+Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
+
 ## Setting up your Pi
 
 Before we can start using the ESCAPE board we need to enable the interfaces that the board uses on your Raspberry Pi.

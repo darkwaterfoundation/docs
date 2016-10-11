@@ -70,7 +70,7 @@ As we don't know what headers and connectors you selected when you ordered your 
 
 *Hint* - A lump of plasticine or clay is very useful to hold your board level.
 
-### Attached the 3 pin servo header
+### Attach the 3 pin servo header
 
 The first part to slot into place is the 3 x 3 connector for the CPPM and Servos. The holes for this part are aligned so that the connector should fit tightly and be held in place.
 
