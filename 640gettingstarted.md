@@ -159,3 +159,4 @@ You have now enabled the interfaces you need to use your board.
 
 ### Next steps
 
+[Programming in Python >](/640python.html)
