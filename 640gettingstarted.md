@@ -58,13 +58,35 @@ The starting address for the 640 board is 0x60 - if we solder jumper A0 then the
 
 ## Setup your 640
 
+Now that we know what each part of the board is for, it's time to solder all the connections - it doesn't matter what order you attach the connections to your board, but we've found that the order below is the simplest.
+
 ### Assemble the parts
 
 **IMPORTANT** - if you have an expansion board that you want to add to your 640 board, then you should add that first as it will be a lot easier than adding it after soldering connectors to the board.
 
-### Attached the 2 pin servo header
+![640 parts](/images/640-parts.png)
+
+As we don't know what headers and connectors you selected when you ordered your 640 board - we're going to show you how to connect the most common selection - other connectors and headers should attach in the same way.
+
+*Hint* - A lump of plasticine or clay is very useful to hold your board level.
+
+### Attached the 3 pin servo header
+
+The first part to slot into place is the 3 x 3 connector for the CPPM and Servos. The holes for this part are aligned so that the connector should fit tightly and be held in place.
+
+![640 3 pin](/images/640-3pin.png)
+
+Slot it in place, but don't solder it yet.
 
 ### Attach the motor and power terminals
+
+Now we need to add the motor and power connectors - slot each in place making sure that you have them the right way around (for the screw terminals the holes should be at the front of the board).
+
+Use a piece of paper or card to hold the connectors in place and turn the board upside down. Slide the paper out from under the board and use a piece of plasticine to prop the board up level.
+
+![640 terminals](/images/640-screwterminals.png)
+
+Make sure everything is lined up correctly - use extra plasticine to align connectors if needed. Once you are happy, solder each of the pins.
 
 ### Attach the header
 
