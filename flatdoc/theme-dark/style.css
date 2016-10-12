@@ -292,6 +292,7 @@ a:hover {
   zoom: 1;
   max-width: 100%;
   background: #fff;
+  overflow: hidden;
 }
 .content:before,
 .content:after {
@@ -934,4 +935,8 @@ code .comment {
 .title-area > div {
   position: relative;
   z-index: 1;
+}
+
+img {
+  max-width: 100%;
 }
