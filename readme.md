@@ -27,10 +27,12 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 ![escape](/images/escape-450.png)
 
 - [Getting started](/escapegettingstarted.html) setting up your ESCAPE board ready for use
+- - [Wiring everything up](/escapewiring.html) connecting your power, motors and servos
 - [Programming in Python](/escapepython.html) the Python API and how to use it
 - [Programming in C++](/escapecplusplus.html) controlling the board in C++
 - [Set up RC Input]() reading input from your RC receiver
 - [Expanding](/expansionadding.html) adding extra expansion boards
+- [Get Advanced](/escapeadvanced.html) more advanced things you can do
 
 [Pre-Order an ESCAPE board >](https://darkwater.io/product/escape-esc-powered-motor-control-board/)
 
