@@ -149,14 +149,3 @@ Go to the *Advanced Options* again and do the same for *SPI*
 This time when you are returned to the main menu, move down to the *Finish* option (pressing the right arrow key twice will get you there) and press enter.
 
 You have now enabled the interfaces you need to use your board.
-
-## Wiring everything up
-
-### Attaching the power
-### Attaching a Servo
-### Attaching a motor
-### Attaching an RC receiver
-
-### Next steps
-
-[Programming in Python >](/640python.html)
