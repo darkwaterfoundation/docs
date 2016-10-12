@@ -46,11 +46,11 @@ This area to the right of the board is for adding extra expansion boards to incr
 
 ##### Address selection
 
-![640 Motors](/images/escape-addressselection.png)
+![ESCAPE Motors](/images/escape-addressselection.png)
 
 The ESCAPE board uses I2C to control the motors. You can have a lot of I2C controlled boards on your Raspberry Pi at the same time, but each must have a unique address.
 
-We have set up the 640 board to use the address **0x61**. If you find that this conflicts with another board you want to use, and you can't change the address of that board, then you can use these 5 solder jumpers to change the 640 board address.
+We have set up the ESCAPE board to use the address **0x61**. If you find that this conflicts with another board you want to use, and you can't change the address of that board, then you can use these 5 solder jumpers to change the ESCAPE board address.
 
 ###### How to change the address
 
