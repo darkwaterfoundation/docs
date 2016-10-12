@@ -1,6 +1,6 @@
 # Getting started
 
-![escape](/images/escape-450.png)
+![Quadcopter DJI 450](/images/dji-f450-flamewheel-v2-e305.jpeg)
 
 We decided to base this build on the excellent DJI 450 Flamewheel ARF kit. The kit provides a good solid base on which to experiment and it is fairly straight forward to add a camera to the platform.
 
@@ -81,7 +81,7 @@ The top plate is then attached to the frame using the provided screws. We then j
 
 ![Quad ESCAPE alignment](/images/quad-wiring.png)
 
-The baromter is connected to the GPIO pins on the ESCAPE board. The other connections are left to right. 1. CPPM from radio receiver. 2. ESC one 3. ESC two 4. ESC three 5. ESC four. The BEC is connected to the first of the servo connectors and provides power to both the ESCAPE board and the Raspberry Pi zero
+The barometer is connected to the GPIO pins on the ESCAPE board. The other connections are left to right. 1. CPPM from radio receiver. 2. ESC one 3. ESC two 4. ESC three 5. ESC four. The BEC is connected to the first of the servo connectors and provides power to both the ESCAPE board and the Raspberry Pi zero
 
 ##### Finished Quadcopter
 
