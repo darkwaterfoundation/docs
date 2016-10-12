@@ -10,169 +10,89 @@ There are many excellent build videos available on-line that detail how to build
 
 ##### Unboxing frame and propellors
 
-![ESCAPE CPPM](/images/quad-unboxing-frame.png)
+![Quad Unboxing](/images/quad-unboxing-frame.png)
 
 
 ##### Motors
 
-![ESCAPE Motors](/images/quad-motors.png)
+![Quad Motors](/images/quad-motors.png)
 
 These are the motors and ESC's. Two motors are CCW and two CW. The propellors are self-tightening so need to be paired with the correct motor.
 
 ##### Motors mounted
 
-![ESCAPE Servos](/images/quad-motors-mounted.png)
+![Quad Motors mounted](/images/quad-motors-mounted.png)
 
 The motors are mounted to the frame arms.
 
-![ESCAPE Power Pin](/images/quad-esc-wires-cut.png)
+![Quad ESC Wires](/images/quad-esc-wires-cut.png)
 
-The wires on the ESC's will also need to be cut to length and the ends tinned with solder.
+The wires on the ESC's needed to be cut to length and the ends tinned with solder.
 
-##### Power
+##### Tinning the base
 
-![ESCAPE Power](/images/escape-power.png)
+![Quad Tinning](/images/quad-tinning-base.png)
 
-The power connection should accept 5v DC - the power you connect here is isolated from your Raspberry Pi and only goes to the servos unless you have the **POWER** jumper in place.
+The Quadcopter base connection points for the ESC's were tinned.
 
-##### Expansion area
+##### Soldering on the four ESC's
 
-![640 Motors](/images/escape-expansionarea.png)
+![Quad ESC's soldered](/images/quad-escs-soldered.png)
 
-This area to the right of the board is for adding extra expansion boards to increase the functionality available to you. For more information on adding expansion boards [look here](/expansionadding.html)
+The fours ESC's were soldered to the base board
 
-##### Address selection
+##### BEC
 
-![ESCAPE Motors](/images/escape-addressselection.png)
+![Quad BEC](/images/quad-bec.png)
 
-The ESCAPE board uses I2C to control the motors. You can have a lot of I2C controlled boards on your Raspberry Pi at the same time, but each must have a unique address.
+A BEC was used to provide power to the ESCAPE board and the Raspberry Pi Zero. Make sure to set the output jumper to 5v ours came set to 6.1v.
 
-We have set up the ESCAPE board to use the address **0x61**. If you find that this conflicts with another board you want to use, and you can't change the address of that board, then you can use these 5 solder jumpers to change the ESCAPE board address.
+##### Soldering the BEC and battery connectors
 
-###### How to change the address
+![Quad solder BEC and battery](/images/quad-solder-bec.png)
 
-Each of the address pins (A0 - A4) can be set to 0 (un-soldered) or 1 (soldered). You set an address pin to 1 by adding solder to each pad of the address pin until the two parts join.
+We next soldered the BEC and the battery connector wires to the base. You can use a piece of tape like we have to hold the BEC wires in position.
 
-![Solder Jumpers by Adafruit](/images/solder_jumpers.jpg)
+##### Insulating the connections
 
-Each address jumper has a binary value - A0 = 1, A1 = 2, A3 = 4, A4 = 8
+![Quad insulate connections](/images/quad-liquid-tape.png)
 
-The starting address for the ESCAPE board is 0x61 - if you look closely at the jumper pads labelled A0 you will see a small connection between them setting this jumper to 1.
+We used liquid electrical tape on our joints to prevent short circuits. You can use normal electrical tape as an alternative.
 
-If we solder jumper A1 then the address will be 0x61 + 2 = 0x63. Soldering A1 and A2 will give us 0x61 + 2 + 4 = 0x67
+##### Assemble the base to the frame arms
 
-## Setup your ESCAPE
+![Quad assemble base to frame](/images/quad-base-frame.png)
 
-Now that we know what each part of the board is for, it's time to solder all the connections - it doesn't matter what order you attach the connections to your board, but we've found that the order below is the simplest.
+We then connected the base to the frame using the provided screws.
 
-### Assemble the parts
+##### Attach the ESC's to the frame
 
-**IMPORTANT** - if you have an expansion board that you want to add to your 640 board, then you should add that first as it will be a lot easier than adding it after soldering connectors to the board.
+![Quad attach ESC's](/images/quad-esc-frame.png)
 
-![ESCAPE parts](/images/escape-parts.png)
+We used Tie-wraps to connect the ESC's to each arm of the Quadcopter.
 
-As we don't know what headers and connectors you selected when you ordered your ESCAPE board - we're going to show you how to connect the most common selection - other connectors and headers should attach in the same way.
+##### Final assembly
 
-*Hint* - A lump of plasticine or clay is very useful to hold your board level.
+![Quad final assembly](/images/quad-final-assembly.png)
 
-### Attach the 2 pin Power jumper
+The top plate is then attached to the frame using the provided screws. We then just need to add the battery pack, radio receiver, Raspberry Pi Zero and ESCAPE board.
 
-The small 2 pin jumper is the first part to put in place. It goes in the two holes labelled **POWER**. 
+##### Wiring
 
-![ESCAPE jumper](/images/escape-jumper.png)
+![Quad ESCAPE alignment](/images/quad-wiring.png)
 
-Place it in the holes but don't solder it in place yet.
+The baromter is connected to the GPIO pins on the ESCAPE board. The other connections are left to right. 1. CPPM from radio receiver. 2. ESC one 3. ESC two 4. ESC three 5. ESC four. The BEC is connected to the first of the servo connectors and provides power to both the ESCAPE board and the Raspberry Pi zero
 
-![ESCAPE jumper in place](/images/escape-jumperinplace.png)
+##### Finished Quadcopter
 
-### Attach the 7 pin motor header and 6 pin servo header
+![Quad finished](/images/quad-finished.png)
 
-The next parts to slot into place are the 7 x 3 connector for the CPPM and motors and the 6 x 3 connector for the servos. The holes for these parts are aligned so that the connectors should fit tightly and be held in place.
+This is the finished Quadcopter. Much use was used of double sided tape and sticky velcro to hold the components down. The battery was wrapped in bubble wrap prior to being held in place with a battery strap. 
 
-![ESCAPE 3 pin](/images/escape-3pin.png)
+##### Quadcopter flying
 
-Slot them in place, and then using a piece of paper or card to hold the connectors in place, turn the board over.
+![Quad ESCAPE alignment](/images/quad-flying.png)
 
-Slide the paper away and use a piece of plasticine or clay to keep the board level on your desk if needed.
+Quadcopter on first test flight.
 
-![ESCAPE 3 solder pin](/images/escape-solder3pin.png)
 
-Solder all the pins in place - if you solder a single pin on each connector initially, then you can check if they are level and aligned correctly.
-
-If they aren't then apply the soldering iron tip to the soldered pin and move the connector until it is level.
-
-### Attach the power terminal
-
-Now we need to add the power connector - slot it in place making sure that you have it the right way around (for the screw terminals the holes should be at the front of the board).
-
-Use a piece of paper or card to hold the connector in place and turn the board upside down. Slide the paper out from under the board and use a piece of plasticine to prop the board up level.
-
-![ESCAPE terminal](/images/escape-screwterminals.png)
-
-Make sure everything is lined up correctly - use extra plasticine to align connectors if needed. Once you are happy, solder each of the pins.
-
-### Attach the header
-
-For this example we'll show you how to connect a stackable header, as it's the most complex.
-
-Due to the length of the stackable headers pins, it can sometimes be a hassle to get them through the holes on the board.
-
-We've found that if you slide up the spacer on the stackable header so that it is near the top, you can get the pins into the boards header holes a lot easier and then slide the spacer back down again.
-
-![ESCAPE spacer](/images/stacker-trick.png)
-
-Once you have your header in place, use some plasticine to make sure the board is level and then solder away. You should solder a single pin first, then make sure the header is level - if it isn't then apply the soldering iron to the pin again and move the header until it is correct.
-
-![ESCAPE header](/images/escape-header.png)
-
-Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
-
-## Setting up your Pi
-
-Before we can start using the ESCAPE board we need to enable the interfaces that the board uses on your Raspberry Pi.
-
-The ESCAPE board is controlled using the I2C interface. Any expansion boards attached to your ESCAPE board are controlled using the SPI interface.
-
-### Enable I2C and SPI in Pixel
-
-If you are using the graphical interface on your Raspberry Pi then click on your main menu icon, move down to *Preferences* and click on the *Raspberry Pi Configuration* menu item. Once open click on the *Interfaces* tab and you should see something like in the image below.
-
-![rasbpi config i2c](/images/raspberryi2c.png)
-
-Make sure that the line labelled I2C is set to enabled.
-
-If you have an expansion board then you'll need to enable the SPI interface as well on the line above, so click the *Enabled* setting next to the *SPI* label
-
-![rasbpi config spi](/images/raspberryspi.png)
-
-Once you click Ok you may be promtped to reboot your Raspberry Pi - go ahead and reboot.
-
-### Enable I2C and SPI on the command line
-
-If you are only using the command line on your Raspberry Pi then you will need to use the text version of the Raspberry Pi configuration tool to enable the interfaces.
-
-Type the following to bring up the configuration interface:
-
-``` bash
-$ sudo raspi-config
-```
-
-Once the menu is showing, scroll down to the *Advanced Options* menu and press Enter.
-
-![rasbpi config adv](/images/advoptions-450.PNG)
-
-Now we'll need to enable the I2C interface, so move down *I2C* menu and press Enter. You'll be asked if you want to enabled I2C - select *Yes* and you will see a confirmation and be returned to the main menu.
-
-![rasbpi config adv i2c](/images/i2c-450.PNG)
-
-Go to the *Advanced Options* again and do the same for *SPI*
-
-![rasbpi config adv spi](/images/spi-450.PNG)
-
-This time when you are returned to the main menu, move down to the *Finish* option (pressing the right arrow key twice will get you there) and press enter.
-
-You have now enabled the interfaces you need to use your board.
-
-### Next steps
-
-[Programming in Python >](/escapepython.html)
