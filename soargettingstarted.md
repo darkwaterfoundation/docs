@@ -12,7 +12,7 @@ The first thing you should do is add the expansion sensor to your SOAR board - i
 
 ![SOAR expansion](/images/soarexpansion.png)
 
-Our guide to adding the [expansion board is here](/expansionadding.html). When you have the expansion board added, return here.
+Our guide to adding the [expansion board is here](/expansionadding.html). 
 
 ### Attach the header
 
@@ -28,7 +28,7 @@ Once you have your header in place, use some plasticine to make sure the board i
 
 ![SOAR header](/images/soar-header.png)
 
-*Note* - the image above shows the SOAR board ready for the header to be soldered **without** the expansion sensor attached - you can assemble the board in this order if you want (some people prefer it), but it's easier to add the expansion sensor first in out opinion.
+*Note* - the image above shows the SOAR board ready for the header to be soldered **without** the expansion sensor attached - you can assemble the board in this order if you want (some people prefer it), but it's easier to add the expansion sensor first in our opinion.
 
 Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
 
