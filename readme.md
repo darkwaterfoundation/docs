@@ -50,4 +50,4 @@ We've put together a few tutorials to help you build functioning robots that you
 
 - [Building the GrassShark]() coming soon
 - [Building the Buggy]() coming soon
-- [Building the quadcopter](/tutorial-quad.html) Building and flying a quad-copter with the ESCAPE board.
+- [Building the quadcopter](/tutorial-quadcopter.html) Building and flying a quad-copter with the ESCAPE board.
