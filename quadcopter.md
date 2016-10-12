@@ -2,35 +2,32 @@
 
 ![escape](/images/escape-450.png)
 
-Welcome to the ESCAPE board - this guide will describe all the features of the ESCAPE board and show you how to control up to 6 motors and 6 servos very simply.
+We decided to base this build on the excellent DJI 450 Flamewheel ARF kit. The kit provides a good solid base on which to experiment and it is fairly straight forward to add a camera to the platform.
 
-## Board layout
+## The build
 
-Before we start to assemble your board, we'll take a look at what each section is and what it is for. Place your ESCAPE board on a table in front of you and identify each area.
+There are many excellent build videos available on-line that detail how to build the basic Quadcopter kit. We've included a few pictures below that detail our build.
 
-##### CPPM / PPM-SUM
+##### Unboxing frame and propellors
 
-![ESCAPE CPPM](/images/escape-cppm.png)
+![ESCAPE CPPM](/images/quad-unboxing-frame.png)
 
-This is the connection that allows you connect a Radio Control (RC) receiver so that you can extend the range of control for your robot.
 
 ##### Motors
 
-![ESCAPE Motors](/images/escape-motors.png)
+![ESCAPE Motors](/images/quad-motors.png)
 
-The ESCAPE board can control 6 independent motors. Each motor has a connection with three pins onto which you will plug the control wire from the motors ESC unit. The centre pin on the Motor connections aren't connected together. This is because the centre wire from an ESC sends 5v and having multiple 5v power supplies connected to each other can be very bad.
+These are the motors and ESC's. Two motors are CCW and two CW. The propellors are self-tightening so need to be paired with the correct motor.
 
-##### Servos
+##### Motors mounted
 
-![ESCAPE Servos](/images/escape-servos.png)
+![ESCAPE Servos](/images/quad-motors-mounted.png)
 
-The ESCAPE board has connections for 6 Servos. They default to being powered by the ESCAPE boards power supply, but we can switch them to be powered by the Raspberry Pi by placing a jumper on the **POWER** pins (assuming the Raspberry Pi is powered via its USB port).
+The motors are mounted to the frame arms.
 
-![ESCAPE Power Pin](/images/escape-powerjumper.png)
+![ESCAPE Power Pin](/images/quad-esc-wires-cut.png)
 
-We can also power the Raspberry Pi by placing an ESC control wire on one of the Servo connects and using the 5v sent on its power wire with the **POWER** jumper in place.
-
-We'll go into more detail on this later, so don't worry about it for now.
+The wires on the ESC's will also need to be cut to length and the ends tinned with solder.
 
 ##### Power
 
