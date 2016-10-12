@@ -548,6 +548,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
     max-width: none;
     z-index: 1;
     background: transparent;
+    overflow: hidden;
   }
   body:not(.no-literate) .content > p,
   body:not(.no-literate) .content > ul,
@@ -937,6 +938,6 @@ code .comment {
   z-index: 1;
 }
 
-img {
+.content img {
   max-width: 100%;
 }
