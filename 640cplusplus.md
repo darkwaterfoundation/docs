@@ -332,9 +332,9 @@ There are two stepping styles available -
 - **DW_SINGLE** - this is the simplest method of stepping which activates a single coil at a time to move and hold the motor. This method uses the  least amount of power.
 - **DW_DOUBLE** - this is a slightly more complex method of stepping which uses to coils to move and hold the motor. This method uses twice as much power as the single step, but is more powerful.
 
-``` python
-st1->onestep(DW_FORWARD, DW_SINGLE);
-st1->onestep(DW_REVERSE, DW_DOUBLE);
+``` c
+st1->oneStep(DW_FORWARD, DW_SINGLE);
+st1->oneStep(DW_REVERSE, DW_DOUBLE);
 ```
 
 ##### step( *steps*, *direction*, *style* )
