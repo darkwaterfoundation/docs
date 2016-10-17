@@ -95,7 +95,7 @@ If you take a look at the code in each of the examples you should be able to get
 
 The first thing we need to do for our program is to import the required libraries - so near the top of your new program you will put
 
-``` C
+``` c
 #include "darkwater/DWESCAPE.h"
 #include "darkwater/Util.h"
 #include <stdlib.h>
@@ -103,7 +103,7 @@ The first thing we need to do for our program is to import the required librarie
 
 If you will be using the CPPM header for input then you will also need to add:
 
-``` C
+``` c
 #include <pigpio.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -111,7 +111,7 @@ If you will be using the CPPM header for input then you will also need to add:
 
 For this example, we'll include everthing in a *main* function for neatness - have a look at the PPM example code for an alternate set up.
 
-``` C
+``` c
 int main()
 {
 
@@ -122,7 +122,7 @@ int main()
 
 The **DWESCAPE** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61 so if you haven't changed the address then you can leave this out.
 
-``` C
+``` c
 DWESCAPE dw(0x61);
 dw.initialize();
 ```
@@ -135,7 +135,7 @@ There are 6 motor ports on the ESCAPE board numbered 1 to 6 from left to right (
 
 If we want to control a motor on port number 1 then we need to request the motor object for that port from our controller - this is very easily done with a single line
 
-``` C
+``` c
 DW_Motor *dw1 = dw.getMotor(1);
 ```
 
