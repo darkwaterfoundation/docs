@@ -149,7 +149,7 @@ We'll start with the main command to stop the motor
 
 The off command will switch off the motor
 
-``` C
+``` c
 dw1->off()
 ```
 
@@ -157,8 +157,8 @@ dw1->off()
 
 We can also stop the motor by using the second command and passing a speed of 0
 
-``` python
-m1.setMotorSpeed(0)
+``` c
+dw1->setMotorSpeed(0);
 ```
 
 The **setMotorSpeed** command allows you to specify the speed of each motor - there are two different speed ranges the first goes from *-255* to *255*, the second from *1000* to *2000*. 
@@ -169,26 +169,26 @@ For now we'll concentrate on the first range.
 
 To get your motor going forwards at full speed you should set its speed at 255
 
-``` python
-m1.setMotorSpeed(255)
+``` c
+dw1->setMotorSpeed(255);
 ```
 
 To get your motor going backwards at full speed you should set its speed to -255
 
-``` python
-m1.setMotorSpeed(-255)
+``` c
+dw1->setMotorSpeed(-255)
 ```
 
 The numbers from 0 to the maximum in each direction will drive the motor at a slower speed, so for half speed forwards we'd use
 
-``` python
-m1.setMotorSpeed(125)
+``` c
+dw1->setMotorSpeed(125)
 ```
 
 And for a slow speed backwards we can use
 
-``` python
-m1.setMotorSpeed(-50)
+``` c
+dw1->setMotorSpeed(-50)
 ```
 
 ##### Alternate speed range
@@ -199,31 +199,31 @@ Both the ESCAPE and 640 boards can use either range, but if you are primarily wo
 
 To get your motor going forwards at full speed you should set its speed to 2000
 
-``` python
-m1.setMotorSpeed(2000)
+``` c
+dw1->setMotorSpeed(2000)
 ```
 
 For full speed reverse you should set the speed to 1000
 
-``` python
-m1.setMotorSpeed(1000)
+``` c
+dw1->setMotorSpeed(1000)
 ```
 
 And to stop the motor we can set the speed to the mid point which is 1500
 
-``` python
-m1.setMotorSpeed(1500)
+``` c
+dw1->setMotorSpeed(1500)
 ```
 
 As before, any number between 1500 and the maximum in each direction will drive the motor at a slower speed, so for half speed forward you'd set the speed to 1750
 
-``` python
-m1.setMotorSpeed(1750)
+``` c
+dw1->setMotorSpeed(1750)
 ```
 
 and half speed in revers would be 1250
 
-``` python
-m1.setMotorSpeed(1250)
+``` c
+dw1->setMotorSpeed(1250)
 ```
 
