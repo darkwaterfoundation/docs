@@ -60,10 +60,34 @@ Once it is compiled you can run it with the command:
 $ sudo ./Servo
 ```
 
-
 ##### PPM
 
+The PPM example will read the input from a PPM radio control receiver connected to the CPPM header on the ESCAPE board, interpret the first 6 channels and move the corresponding servos.
+
+To build this demo type the following:
+
+``` bash
+$ cd ./PPM
+$ make
+```
+
+Once compiled, attach your CPPM receiver to the CPPM connector (see here CPPM set up) and run the program - you will see the output for each channel on the screen as it runs. Attaching servos to the Servo rail will allow you to control them individually by moving the sticks on your RC transmitter.
+
+``` bash
+$ sudo ./PPM
+```
+
 ##### AccelGyroMag
+
+If you have a 9DoF expansion board on your ESCAPE board or are using a SOAR board then this example will read and output the Gyroscope, Accelerometer and Compass readings.
+
+To compile and run it, type the following
+
+``` bash
+$ cd ./AccelGyroMag
+$ make
+$ sudo ./AccelGyroMag
+```
 
 ### Drive a motor
 ### Motor speed
