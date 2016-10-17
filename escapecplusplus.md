@@ -89,13 +89,141 @@ $ make
 $ sudo ./AccelGyroMag
 ```
 
-### Drive a motor
-### Motor speed
-### Servo control
-### PPM integration
+### The ESCAPE board API
 
-## Expanding the board
+If you take a look at the code in each of the examples you should be able to get an idea of how the ESCAPE board API works. We'll go into more detail of each of the available commands below. 
 
-### Adding an expansion board
+The first thing we need to do for our program is to import the required libraries - so near the top of your new program you will put
 
-### Next steps
+``` C
+#include "darkwater/DWESCAPE.h"
+#include "darkwater/Util.h"
+#include <stdlib.h>
+```
+
+If you will be using the CPPM header for input then you will also need to add:
+
+``` C
+#include <pigpio.h>
+#include <stdio.h>
+#include <unistd.h>
+```
+
+For this example, we'll include everthing in a *main* function for neatness - have a look at the PPM example code for an alternate set up.
+
+``` C
+int main()
+{
+
+}
+```
+
+#### Create a controller
+
+The **DWESCAPE** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61 so if you haven't changed the address then you can leave this out.
+
+``` C
+DWESCAPE dw(0x61);
+dw.initialize();
+```
+
+Now that we have the controller created, we can access all the connectors on the board.
+
+#### Select a Motor
+
+There are 6 motor ports on the ESCAPE board numbered 1 to 6 from left to right (with the ports facing you ).
+
+If we want to control a motor on port number 1 then we need to request the motor object for that port from our controller - this is very easily done with a single line
+
+``` C
+DW_Motor *dw1 = dw.getMotor(1);
+```
+
+#### Motor driving
+
+There are two main commands that you can give a motor - to move in a direction and to stop. 
+
+We'll start with the main command to stop the motor
+
+##### off()
+
+The off command will switch off the motor
+
+``` C
+dw1->off()
+```
+
+##### setMotorSpeed( *speed* )
+
+We can also stop the motor by using the second command and passing a speed of 0
+
+``` python
+m1.setMotorSpeed(0)
+```
+
+The **setMotorSpeed** command allows you to specify the speed of each motor - there are two different speed ranges the first goes from *-255* to *255*, the second from *1000* to *2000*. 
+
+If you are familiar with radio control vehicles and ESC motors then you will recognise the second range.
+
+For now we'll concentrate on the first range.
+
+To get your motor going forwards at full speed you should set its speed at 255
+
+``` python
+m1.setMotorSpeed(255)
+```
+
+To get your motor going backwards at full speed you should set its speed to -255
+
+``` python
+m1.setMotorSpeed(-255)
+```
+
+The numbers from 0 to the maximum in each direction will drive the motor at a slower speed, so for half speed forwards we'd use
+
+``` python
+m1.setMotorSpeed(125)
+```
+
+And for a slow speed backwards we can use
+
+``` python
+m1.setMotorSpeed(-50)
+```
+
+##### Alternate speed range
+
+The spped range above is easy to use as you can quickly see what speed is forwards, backwards and stopped. ESC powered motors use a different range that goes from 1000 to 2000, with 1500 (the middle point) being stop.
+
+Both the ESCAPE and 640 boards can use either range, but if you are primarily working with ESC powered motors and Radio Control inputs then you should use this range as it makes programming a lot easier.
+
+To get your motor going forwards at full speed you should set its speed to 2000
+
+``` python
+m1.setMotorSpeed(2000)
+```
+
+For full speed reverse you should set the speed to 1000
+
+``` python
+m1.setMotorSpeed(1000)
+```
+
+And to stop the motor we can set the speed to the mid point which is 1500
+
+``` python
+m1.setMotorSpeed(1500)
+```
+
+As before, any number between 1500 and the maximum in each direction will drive the motor at a slower speed, so for half speed forward you'd set the speed to 1750
+
+``` python
+m1.setMotorSpeed(1750)
+```
+
+and half speed in revers would be 1250
+
+``` python
+m1.setMotorSpeed(1250)
+```
+

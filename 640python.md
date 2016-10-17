@@ -66,7 +66,7 @@ $ python 640steppertest.py
 
 ### The 640 board API
 
-Now you know everything works, it's time to write your own scripts. So create a new python script in your editor, within the *darkwater_python_640* directory with a memorable name and add the following lines to import our libraries:
+Now you know everything works, it's time to write your own scripts. So create a new python script in your editor with a memorable name and add the following lines to import our libraries:
 
 ``` python
 import time

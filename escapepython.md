@@ -56,7 +56,7 @@ $ python escapeservotest.py
 
 ### The ESCAPE board API
 
-Now you know everything works, it's time to write your own scripts. So create a new python script in your editor, within the *darkwater_python_escape* directory with a memorable name and add the following lines to import our libraries:
+Now you know everything works, it's time to write your own scripts. So create a new python script in your editor with a memorable name and add the following lines to import our libraries:
 
 ``` python
 import time
@@ -65,9 +65,9 @@ from darkwater_escape import dw_Controller, dw_Motor, dw_Servo
 
 #### Create a controller
 
-The **dw_controller** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the 640 board as a parameter - the default address is 0x61
+The **dw_controller** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61
 
-``` python
+``` C
 dw = dw_Controller( addr=0x61 )
 ```
 
