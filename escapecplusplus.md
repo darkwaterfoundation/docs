@@ -221,9 +221,58 @@ As before, any number between 1500 and the maximum in each direction will drive 
 dw1->setMotorSpeed(1750)
 ```
 
-and half speed in revers would be 1250
+and half speed in reverse would be 1250
 
 ``` c
 dw1->setMotorSpeed(1250)
 ```
 
+#### Select a Servo
+
+There are six servo ports on the ESCAPE board. They are numbered from 1 to 6 with number 1 to the left hand side and number 6 the closest to the power connector.
+
+You select a servo in the same manner as you select motors, by requesting a servo object from the controller - to select the first servo we use:
+
+``` c
+DW_Servo *s1 = dw.getServo(1);
+```
+
+#### Servo control
+
+Once you have a servo object there are currently three commands you can run.
+
+##### off()
+
+The off command will switch off your servo and stop any signals being sent to it.
+
+``` c
+s1->off();
+```
+
+##### setPWMuS( *microseconds* )
+
+This command will allow you to set the PWM pulse to the Servo in microseconds. 
+
+Most standard servos use a parameter value of 1000 for fully counter-clockwise, 2000 for fully clockwise, and 1500 for the middle - though you may have a wider range on your servo, so you should check the technical documentation for it to get the finer details.
+
+``` c
+s1->setPWMuS(1500); // middle
+s1->setPWMuS(2000); // fully clockwise
+s1->setPWMuS(1000); // fully counter clockwise
+```
+
+##### setPWMmS( *milliseconds* )
+
+This command allows you to specify the PWM pulse in milliseconds rather than seconds.
+
+``` c
+s1->setPWMmS(1.5); // middle
+s1->setPWMmS(2.0); // fully clockwise
+s1->setPWMmS(1.0); // fully counter clockwise
+```
+
+### Compiling your code
+
+Unlike with Python, we need to take an extra step with C++ and compile our code so that it can be run on the Raspberry Pi.
+
+To do that, and to make it easier to re-compile as you update, we will create a *makefile*. The *makefile* is a little script that knows the location of all the libraries we want to include in our program and knows how to compile them together to make a single exectuable. 

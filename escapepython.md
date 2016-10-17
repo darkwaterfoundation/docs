@@ -165,7 +165,7 @@ As before, any number between 1500 and the maximum in each direction will drive 
 m1.setMotorSpeed(1750)
 ```
 
-and half speed in revers would be 1250
+and half speed in reverse would be 1250
 
 ``` python
 m1.setMotorSpeed(1250)
