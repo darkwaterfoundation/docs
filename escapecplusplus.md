@@ -32,7 +32,34 @@ Take a look in the examples directory and you will see the following available d
 
 ##### Motor
 
+The Motor example will start each motor in turn from 1 through to 6 in a forwards direction, then stop them and do the same in reverse. To build this demo type the following:
+
+``` bash
+$ cd ./Motor
+$ make
+```
+
+Once you are returned to the command prompt you can run the program with the command:
+
+``` bash
+$ sudo ./Motor
+```
+
 ##### Servo
+
+The servo example will move each of the six servos backwards and forwards six times. To build this demo type the following:
+
+``` bash
+$ cd ./Servo
+$ make
+```
+
+Once it is compiled you can run it with the command:
+
+``` bash
+$ sudo ./Servo
+```
+
 
 ##### PPM
 
