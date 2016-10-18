@@ -229,7 +229,7 @@ dw1->setMotorSpeed(1250)
 
 #### Select a Servo
 
-There are two servo ports on the 640 board. They are numbered from 1 to 6 with number 1 to the left hand side and number 6 the closest to the power connector.
+There are two servo ports on the 640 board. They are numbered from 1 and 2 with number 1 to the left hand side and number 2 the closest to the motor connectors.
 
 You select a servo in the same manner as you select motors, by requesting a servo object from the controller - to select the first servo we use:
 
