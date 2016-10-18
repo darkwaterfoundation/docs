@@ -32,13 +32,13 @@ Once you have your header in place, use some plasticine to make sure the board i
 
 Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
 
-## Setting up your Pi
+# Setting up your Pi
 
 Before we can start using the SOAR board we need to enable the interface that the board uses on your Raspberry Pi.
 
 The SOAR board is controlled using the SPI interface.
 
-### Enable SPI in Pixel
+## Enable SPI in Pixel
 
 If you are using the graphical interface on your Raspberry Pi then click on your main menu icon, move down to *Preferences* and click on the *Raspberry Pi Configuration* menu item. Once open click on the *Interfaces* tab and you should see something like in the image below.
 
@@ -48,7 +48,7 @@ Make sure that the line labelled SPI is set to enabled.
 
 Once you click Ok you may be promtped to reboot your Raspberry Pi - go ahead and reboot.
 
-### Enable SPI on the command line
+## Enable SPI on the command line
 
 If you are only using the command line on your Raspberry Pi then you will need to use the text version of the Raspberry Pi configuration tool to enable the interfaces.
 

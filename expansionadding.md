@@ -1,3 +1,3 @@
 # Expanding your boards
 
-### Adding an expansion board
+## Adding an expansion board

@@ -64,11 +64,11 @@ The starting address for the ESCAPE board is 0x61 - if you look closely at the j
 
 If we solder jumper A1 then the address will be 0x61 + 2 = 0x63. Soldering A1 and A2 will give us 0x61 + 2 + 4 = 0x67
 
-## Setup your ESCAPE
+# Setup your ESCAPE
 
 Now that we know what each part of the board is for, it's time to solder all the connections - it doesn't matter what order you attach the connections to your board, but we've found that the order below is the simplest.
 
-### Assemble the parts
+## Assemble the parts
 
 **IMPORTANT** - if you have an expansion board that you want to add to your 640 board, then you should add that first as it will be a lot easier than adding it after soldering connectors to the board.
 
@@ -78,7 +78,7 @@ As we don't know what headers and connectors you selected when you ordered your 
 
 *Hint* - A lump of plasticine or clay is very useful to hold your board level.
 
-### Attach the 2 pin Power jumper
+## Attach the 2 pin Power jumper
 
 The small 2 pin jumper is the first part to put in place. It goes in the two holes labelled **POWER**. 
 
@@ -88,7 +88,7 @@ Place it in the holes but don't solder it in place yet.
 
 ![ESCAPE jumper in place](/images/escape-jumperinplace.png)
 
-### Attach the 7 pin motor header and 6 pin servo header
+## Attach the 7 pin motor header and 6 pin servo header
 
 The next parts to slot into place are the 7 x 3 connector for the CPPM and motors and the 6 x 3 connector for the servos. The holes for these parts are aligned so that the connectors should fit tightly and be held in place.
 
@@ -104,7 +104,7 @@ Solder all the pins in place - if you solder a single pin on each connector init
 
 If they aren't then apply the soldering iron tip to the soldered pin and move the connector until it is level.
 
-### Attach the power terminal
+## Attach the power terminal
 
 Now we need to add the power connector - slot it in place making sure that you have it the right way around (for the screw terminals the holes should be at the front of the board).
 
@@ -114,7 +114,7 @@ Use a piece of paper or card to hold the connector in place and turn the board u
 
 Make sure everything is lined up correctly - use extra plasticine to align connectors if needed. Once you are happy, solder each of the pins.
 
-### Attach the header
+## Attach the header
 
 For this example we'll show you how to connect a stackable header, as it's the most complex.
 
@@ -130,13 +130,13 @@ Once you have your header in place, use some plasticine to make sure the board i
 
 Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
 
-## Setting up your Pi
+# Setting up your Pi
 
 Before we can start using the ESCAPE board we need to enable the interfaces that the board uses on your Raspberry Pi.
 
 The ESCAPE board is controlled using the I2C interface. Any expansion boards attached to your ESCAPE board are controlled using the SPI interface.
 
-### Enable I2C and SPI in Pixel
+## Enable I2C and SPI in Pixel
 
 If you are using the graphical interface on your Raspberry Pi then click on your main menu icon, move down to *Preferences* and click on the *Raspberry Pi Configuration* menu item. Once open click on the *Interfaces* tab and you should see something like in the image below.
 
@@ -150,7 +150,7 @@ If you have an expansion board then you'll need to enable the SPI interface as w
 
 Once you click Ok you may be promtped to reboot your Raspberry Pi - go ahead and reboot.
 
-### Enable I2C and SPI on the command line
+## Enable I2C and SPI on the command line
 
 If you are only using the command line on your Raspberry Pi then you will need to use the text version of the Raspberry Pi configuration tool to enable the interfaces.
 
@@ -176,9 +176,9 @@ This time when you are returned to the main menu, move down to the *Finish* opti
 
 You have now enabled the interfaces you need to use your board.
 
-## Programming the ESCAPE
+# Programming the ESCAPE
 
-### Installing the Python libraries
+## Installing the Python libraries
 
 The Python libraries for the ESCAPE board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
 
@@ -198,7 +198,7 @@ And once in there we can install the libraries with:
 $ sudo python setup.py install
 ```
 
-#### Example scripts
+### Example scripts
 
 Once everything is installed we can have a play with the example scripts included in the download. As well as being useful to test each part of your board, they are also handy as a starting point when writing your own scrips.
 
@@ -214,7 +214,7 @@ If you list the files in this directory, you should see a few test scripts
 $ ls -al
 ```
 
-##### escapemotortest.py
+#### escapemotortest.py
 
 This script will start each motor port, in the forwards direction, in turn from left to right and then do the same backwards. To run the script enter the following:
 
@@ -222,7 +222,7 @@ This script will start each motor port, in the forwards direction, in turn from 
 $ python escapemotortest.py
 ```
 
-##### escapeservotest.py
+#### escapeservotest.py
 
 This script will move any servos connected to the servo headers left, then center, then right. To run the script enter the following:
 
@@ -230,7 +230,7 @@ This script will move any servos connected to the servo headers left, then cente
 $ python escapeservotest.py
 ```
 
-### The Python API
+## The Python API
 
 Now you know everything works, it's time to write your own scripts. So create a new python script in your editor with a memorable name and add the following lines to import our libraries:
 
@@ -239,7 +239,7 @@ import time
 from darkwater_escape import dw_Controller, dw_Motor, dw_Servo
 ```
 
-#### Create a controller
+### Create a controller
 
 The **dw_controller** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61
 
@@ -249,7 +249,7 @@ dw = dw_Controller( addr=0x61 )
 
 Now that we have the controller created, we can access all the connectors on the board.
 
-#### Select a Motor
+### Select a Motor
 
 There are 6 motor ports on the ESCAPE board numbered 1 to 6 from left to right (with the ports facing you ).
 
@@ -259,13 +259,13 @@ If we want to control a motor on port number 1 then we need to request the motor
 m1 = dw.getMotor(1)
 ```
 
-#### Motor driving
+### Motor driving
 
 There are two main commands that you can give a motor - to move in a direction and to stop. 
 
 We'll start with the main command to stop the motor
 
-##### off()
+#### off()
 
 The off command will switch off the motor
 
@@ -273,7 +273,7 @@ The off command will switch off the motor
 m1.off()
 ```
 
-##### setMotorSpeed( *speed* )
+#### setMotorSpeed( *speed* )
 
 We can also stop the motor by using the second command and passing a speed of 0
 
@@ -311,7 +311,7 @@ And for a slow speed backwards we can use
 m1.setMotorSpeed(-50)
 ```
 
-##### Alternate speed range
+#### Alternate speed range
 
 The spped range above is easy to use as you can quickly see what speed is forwards, backwards and stopped. ESC powered motors use a different range that goes from 1000 to 2000, with 1500 (the middle point) being stop.
 
@@ -347,7 +347,7 @@ and half speed in reverse would be 1250
 m1.setMotorSpeed(1250)
 ```
 
-#### Select a Servo
+### Select a Servo
 
 There are six servo ports on the ESCAPE board. They are numbered from 1 to 6 with number 1 to the left hand side and number 6 the closest to the power connector.
 
@@ -357,11 +357,11 @@ You select a servo in the same manner as you select motors, by requesting a serv
 s1 = dw.getServo(1)
 ```
 
-#### Servo control
+### Servo control
 
 Once you have a servo object there are currently three commands you can run.
 
-##### off()
+#### off()
 
 The off command will switch off your servo and stop any signals being sent to it.
 
@@ -369,7 +369,7 @@ The off command will switch off your servo and stop any signals being sent to it
 s1.off()
 ```
 
-##### setPWMuS( *microseconds* )
+#### setPWMuS( *microseconds* )
 
 This command will allow you to set the PWM pulse to the Servo in microseconds. 
 
@@ -381,7 +381,7 @@ s1.setPWMuS(2000) # fully clockwise
 s1.setPWMuS(1000) # fully counter clockwise
 ```
 
-##### setPWMmS( *milliseconds* )
+#### setPWMmS( *milliseconds* )
 
 This command allows you to specify the PWM pulse in milliseconds rather than seconds.
 
@@ -391,7 +391,7 @@ s1.setPWMmS(2.0) # fully clockwise
 s1.setPWMmS(1.0) # fully counter clockwise
 ```
 
-### Installing the C++ libraries
+## Installing the C++ libraries
 
 The C++ libraries for the ESCAPE board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
 
@@ -415,11 +415,11 @@ You should see two directories (and a README.md file which contains this content
 
 The **darkwater** directory contains all of the classes needed to control your board and the **examples** directory contains a selection of demo code we've put together to show you how they are used.
 
-#### Examples
+### Examples
 
 Take a look in the examples directory and you will see the following available demos.
 
-##### Motor
+#### Motor
 
 The Motor example will start each motor in turn from 1 through to 6 in a forwards direction, then stop them and do the same in reverse. To build this demo type the following:
 
@@ -434,7 +434,7 @@ Once you are returned to the command prompt you can run the program with the com
 $ sudo ./Motor
 ```
 
-##### Servo
+#### Servo
 
 The servo example will move each of the six servos backwards and forwards six times. To build this demo type the following:
 
@@ -449,7 +449,7 @@ Once it is compiled you can run it with the command:
 $ sudo ./Servo
 ```
 
-##### PPM
+#### PPM
 
 The PPM example will read the input from a PPM radio control receiver connected to the CPPM header on the ESCAPE board, interpret the first 6 channels and move the corresponding servos.
 
@@ -466,7 +466,7 @@ Once compiled, attach your CPPM receiver to the CPPM connector (see here CPPM se
 $ sudo ./PPM
 ```
 
-##### AccelGyroMag
+#### AccelGyroMag
 
 If you have a 9DoF expansion board on your ESCAPE board or are using a SOAR board then this example will read and output the Gyroscope, Accelerometer and Compass readings.
 
@@ -478,7 +478,7 @@ $ make
 $ sudo ./AccelGyroMag
 ```
 
-### The C++ API
+## The C++ API
 
 If you take a look at the code in each of the examples you should be able to get an idea of how the ESCAPE board API works. We'll go into more detail of each of the available commands below. 
 
@@ -507,7 +507,7 @@ int main()
 }
 ```
 
-#### Create a controller
+### Create a controller
 
 The **DWESCAPE** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61 so if you haven't changed the address then you can leave this out.
 
@@ -518,7 +518,7 @@ dw.initialize();
 
 Now that we have the controller created, we can access all the connectors on the board.
 
-#### Select a Motor
+### Select a Motor
 
 There are 6 motor ports on the ESCAPE board numbered 1 to 6 from left to right (with the ports facing you ).
 
@@ -528,13 +528,13 @@ If we want to control a motor on port number 1 then we need to request the motor
 DW_Motor *dw1 = dw.getMotor(1);
 ```
 
-#### Motor driving
+### Motor driving
 
 There are two main commands that you can give a motor - to move in a direction and to stop. 
 
 We'll start with the main command to stop the motor
 
-##### off()
+#### off()
 
 The off command will switch off the motor
 
@@ -542,7 +542,7 @@ The off command will switch off the motor
 dw1->off()
 ```
 
-##### setMotorSpeed( *speed* )
+#### setMotorSpeed( *speed* )
 
 We can also stop the motor by using the second command and passing a speed of 0
 
@@ -580,7 +580,7 @@ And for a slow speed backwards we can use
 dw1->setMotorSpeed(-50)
 ```
 
-##### Alternate speed range
+#### Alternate speed range
 
 The spped range above is easy to use as you can quickly see what speed is forwards, backwards and stopped. ESC powered motors use a different range that goes from 1000 to 2000, with 1500 (the middle point) being stop.
 
@@ -616,7 +616,7 @@ and half speed in reverse would be 1250
 dw1->setMotorSpeed(1250)
 ```
 
-#### Select a Servo
+### Select a Servo
 
 There are six servo ports on the ESCAPE board. They are numbered from 1 to 6 with number 1 to the left hand side and number 6 the closest to the power connector.
 
@@ -626,11 +626,11 @@ You select a servo in the same manner as you select motors, by requesting a serv
 DW_Servo *s1 = dw.getServo(1);
 ```
 
-#### Servo control
+### Servo control
 
 Once you have a servo object there are currently three commands you can run.
 
-##### off()
+#### off()
 
 The off command will switch off your servo and stop any signals being sent to it.
 
@@ -638,7 +638,7 @@ The off command will switch off your servo and stop any signals being sent to it
 s1->off();
 ```
 
-##### setPWMuS( *microseconds* )
+#### setPWMuS( *microseconds* )
 
 This command will allow you to set the PWM pulse to the Servo in microseconds. 
 
@@ -650,7 +650,7 @@ s1->setPWMuS(2000); // fully clockwise
 s1->setPWMuS(1000); // fully counter clockwise
 ```
 
-##### setPWMmS( *milliseconds* )
+#### setPWMmS( *milliseconds* )
 
 This command allows you to specify the PWM pulse in milliseconds rather than seconds.
 
@@ -660,7 +660,7 @@ s1->setPWMmS(2.0); // fully clockwise
 s1->setPWMmS(1.0); // fully counter clockwise
 ```
 
-### Compiling your code
+## Compiling your code
 
 Unlike with Python, we need to take an extra step with C++ and compile our code so that it can be run on the Raspberry Pi.
 
