@@ -1,50 +1,56 @@
 # Getting started
 
-![640](/images/640-450.png)
+![escape](/images/escape-450.png)
 
-Welcome to the 640 board - this guide will describe all the features of the 640 board and show you how to control up to 6 motors or 3 stepper motors and 2 servos very simply.
+Welcome to the ESCAPE board - this guide will describe all the features of the ESCAPE board and show you how to control up to 6 motors and 6 servos very simply.
 
 ## Board layout
 
-Before we start to assemble your board, we'll take a look at what each section is and what it is for. Place your 640 board on a table in front of you and identify each area.
+Before we start to assemble your board, we'll take a look at what each section is and what it is for. Place your ESCAPE board on a table in front of you and identify each area.
 
 ### CPPM / PPM-SUM
 
-![640 CPPM](/images/640-cppm.png)
+![ESCAPE CPPM](/images/escape-cppm.png)
 
 This is the connection that allows you connect a Radio Control (RC) receiver so that you can extend the range of control for your robot.
 
-### Servos
-
-![640 Servos](/images/640-servo.png)
-
-The 640 board has connections for two Servos. They default to being powered by the Raspberry Pi 5v supply, but we can switch them to be powered by the external battery supply if we want to.
-
 ### Motors
 
-![640 Motors](/images/640-motors.png)
+![ESCAPE Motors](/images/escape-motors.png)
 
-The 640 board can control 6 independent motors. Each motor has a connection with two pins (or terminals if you are using the screw terminal connections). It doesn't matter which way around you wire your motor, just make sure that you wire them all the same way. If you find that sending a Forward command makes your robot go backwards, then you can switch the wires around.
+The ESCAPE board can control 6 independent motors. Each motor has a connection with three pins onto which you will plug the control wire from the motors ESC unit. The centre pin on the Motor connections aren't connected together. This is because the centre wire from an ESC sends 5v and having multiple 5v power supplies connected to each other can be very bad.
+
+### Servos
+
+![ESCAPE Servos](/images/escape-servos.png)
+
+The ESCAPE board has connections for 6 Servos. They default to being powered by the ESCAPE boards power supply, but we can switch them to be powered by the Raspberry Pi by placing a jumper on the **POWER** pins (assuming the Raspberry Pi is powered via its USB port).
+
+![ESCAPE Power Pin](/images/escape-powerjumper.png)
+
+We can also power the Raspberry Pi by placing an ESC control wire on one of the Servo connects and using the 5v sent on its power wire with the **POWER** jumper in place.
+
+We'll go into more detail on this later, so don't worry about it for now.
 
 ### Power
 
-![640 Power](/images/640-power.png)
+![ESCAPE Power](/images/escape-power.png)
 
-The power connection can accept from 2v all the way up to 11v DC - the power you connect here is isolated from your Raspberry Pi and only goes to the motors. Make sure you match your recommended motor voltage as too much power can damage them, and too little won't make them turn.
+The power connection should accept 5v DC - the power you connect here is isolated from your Raspberry Pi and only goes to the servos unless you have the **POWER** jumper in place.
 
 ### Expansion area
 
-![640 Motors](/images/640-expansionarea.png)
+![640 Motors](/images/escape-expansionarea.png)
 
 This area to the right of the board is for adding extra expansion boards to increase the functionality available to you. For more information on adding expansion boards [look here](/expansionadding.html)
 
 ### Address selection
 
-![640 Motors](/images/640-addressselection.png)
+![ESCAPE Motors](/images/escape-addressselection.png)
 
-The 640 board uses I2C to control the motors. You can have a lot of I2C controlled boards on your Raspberry Pi at the same time, but each must have a unique address.
+The ESCAPE board uses I2C to control the motors. You can have a lot of I2C controlled boards on your Raspberry Pi at the same time, but each must have a unique address.
 
-We have set up the 640 board to use the address **0x60**. If you find that this conflicts with another board you want to use, and you can't change the address of that board, then you can use these 5 solder jumpers to change the 640 board address.
+We have set up the ESCAPE board to use the address **0x61**. If you find that this conflicts with another board you want to use, and you can't change the address of that board, then you can use these 5 solder jumpers to change the ESCAPE board address.
 
 #### How to change the address
 
@@ -54,9 +60,11 @@ Each of the address pins (A0 - A4) can be set to 0 (un-soldered) or 1 (soldered)
 
 Each address jumper has a binary value - A0 = 1, A1 = 2, A3 = 4, A4 = 8
 
-The starting address for the 640 board is 0x60 - if we solder jumper A0 then the address will be 0x60 + 1 = 0x61. Soldering A0 and A1 will give us 0x60 + 1 + 2 = 0x63
+The starting address for the ESCAPE board is 0x61 - if you look closely at the jumper pads labelled A0 you will see a small connection between them setting this jumper to 1.
 
-## Setup your 640
+If we solder jumper A1 then the address will be 0x61 + 2 = 0x63. Soldering A1 and A2 will give us 0x61 + 2 + 4 = 0x67
+
+## Setup your ESCAPE
 
 Now that we know what each part of the board is for, it's time to solder all the connections - it doesn't matter what order you attach the connections to your board, but we've found that the order below is the simplest.
 
@@ -64,27 +72,45 @@ Now that we know what each part of the board is for, it's time to solder all the
 
 **IMPORTANT** - if you have an expansion board that you want to add to your 640 board, then you should add that first as it will be a lot easier than adding it after soldering connectors to the board.
 
-![640 parts](/images/640-parts.png)
+![ESCAPE parts](/images/escape-parts.png)
 
-As we don't know what headers and connectors you selected when you ordered your 640 board - we're going to show you how to connect the most common selection - other connectors and headers should attach in the same way.
+As we don't know what headers and connectors you selected when you ordered your ESCAPE board - we're going to show you how to connect the most common selection - other connectors and headers should attach in the same way.
 
 *Hint* - A lump of plasticine or clay is very useful to hold your board level.
 
-### Attach the 3 pin servo header
+### Attach the 2 pin Power jumper
 
-The first part to slot into place is the 3 x 3 connector for the CPPM and Servos. The holes for this part are aligned so that the connector should fit tightly and be held in place.
+The small 2 pin jumper is the first part to put in place. It goes in the two holes labelled **POWER**. 
 
-![640 3 pin](/images/640-3pin.png)
+![ESCAPE jumper](/images/escape-jumper.png)
 
-Slot it in place, but don't solder it yet.
+Place it in the holes but don't solder it in place yet.
 
-### Attach the motor and power terminals
+![ESCAPE jumper in place](/images/escape-jumperinplace.png)
 
-Now we need to add the motor and power connectors - slot each in place making sure that you have them the right way around (for the screw terminals the holes should be at the front of the board).
+### Attach the 7 pin motor header and 6 pin servo header
 
-Use a piece of paper or card to hold the connectors in place and turn the board upside down. Slide the paper out from under the board and use a piece of plasticine to prop the board up level.
+The next parts to slot into place are the 7 x 3 connector for the CPPM and motors and the 6 x 3 connector for the servos. The holes for these parts are aligned so that the connectors should fit tightly and be held in place.
 
-![640 terminals](/images/640-screwterminals.png)
+![ESCAPE 3 pin](/images/escape-3pin.png)
+
+Slot them in place, and then using a piece of paper or card to hold the connectors in place, turn the board over.
+
+Slide the paper away and use a piece of plasticine or clay to keep the board level on your desk if needed.
+
+![ESCAPE 3 solder pin](/images/escape-solder3pin.png)
+
+Solder all the pins in place - if you solder a single pin on each connector initially, then you can check if they are level and aligned correctly.
+
+If they aren't then apply the soldering iron tip to the soldered pin and move the connector until it is level.
+
+### Attach the power terminal
+
+Now we need to add the power connector - slot it in place making sure that you have it the right way around (for the screw terminals the holes should be at the front of the board).
+
+Use a piece of paper or card to hold the connector in place and turn the board upside down. Slide the paper out from under the board and use a piece of plasticine to prop the board up level.
+
+![ESCAPE terminal](/images/escape-screwterminals.png)
 
 Make sure everything is lined up correctly - use extra plasticine to align connectors if needed. Once you are happy, solder each of the pins.
 
@@ -96,19 +122,19 @@ Due to the length of the stackable headers pins, it can sometimes be a hassle to
 
 We've found that if you slide up the spacer on the stackable header so that it is near the top, you can get the pins into the boards header holes a lot easier and then slide the spacer back down again.
 
-![640 spacer](/images/stacker-trick.png)
+![ESCAPE spacer](/images/stacker-trick.png)
 
 Once you have your header in place, use some plasticine to make sure the board is level and then solder away. You should solder a single pin first, then make sure the header is level - if it isn't then apply the soldering iron to the pin again and move the header until it is correct.
 
-![640 header](/images/640-header.png)
+![ESCAPE header](/images/escape-header.png)
 
 Now that your board is set up, it's time to configure your Raspberry Pi so that you can use it.
 
 ## Setting up your Pi
 
-Before we can start using the 640 board we need to enable the interfaces that the board uses on your Raspberry Pi.
+Before we can start using the ESCAPE board we need to enable the interfaces that the board uses on your Raspberry Pi.
 
-The 640 board is controlled using the I2C interface. Any expansion boards attached to your 640 board are controlled using the SPI interface.
+The ESCAPE board is controlled using the I2C interface. Any expansion boards attached to your ESCAPE board are controlled using the SPI interface.
 
 ### Enable I2C and SPI in Pixel
 
@@ -150,20 +176,20 @@ This time when you are returned to the main menu, move down to the *Finish* opti
 
 You have now enabled the interfaces you need to use your board.
 
-## Programming the 640
+## Programming the ESCAPE
 
 ### Installing the Python libraries
 
-The Python libraries for the 640 board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
+The Python libraries for the ESCAPE board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
 
 ```bash
-$ git clone https://github.com/darkwaterfoundation/darkwater_python_640.git
+$ git clone https://github.com/darkwaterfoundation/darkwater_python_escape.git
 ```
 
 Next you need to navigate into the new directory so enter:
 
 ```bash
-$ cd ./darkwater_python_640
+$ cd ./darkwater_python_escape
 ```
 
 And once in there we can install the libraries with:
@@ -188,30 +214,20 @@ If you list the files in this directory, you should see a few test scripts
 $ ls -al
 ```
 
-##### 640motortest.py
+##### escapemotortest.py
 
 This script will start each motor port, in the forwards direction, in turn from left to right and then do the same backwards. To run the script enter the following:
 
 ```bash
-$ python 640motortest.py
+$ python escapemotortest.py
 ```
 
-##### 640servotest.py
+##### escapeservotest.py
 
 This script will move any servos connected to the servo headers left, then center, then right. To run the script enter the following:
 
 ```bash
-$ python 640servotest.py
-```
-
-##### 640steppertest.py
-
-This script divides the 6 motor ports into 3 stepper motor ports. Motor 1 and 2 will be stepper 1, motor 3 and 4 will be stepper 2 and motor 5 and 6 will be stepper 3.
-
-Each stepper will be moved forwards and backwards through 400 steps when the test script is run:
-
-```bash
-$ python 640steppertest.py
+$ python escapeservotest.py
 ```
 
 ### The Python API
@@ -220,22 +236,22 @@ Now you know everything works, it's time to write your own scripts. So create a 
 
 ```python
 import time
-from darkwater_640 import dw_Controller, dw_Motor, dw_Servo, dw_Stepper
+from darkwater_escape import dw_Controller, dw_Motor, dw_Servo
 ```
 
 #### Create a controller
 
-The **dw_controller** object controls access to all the elements on the 640 board, so the first thing we need to do is create a controller - we pass in the address of the 640 board as a parameter - the default address is 0x60
+The **dw_controller** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61
 
 ```python
-dw = dw_Controller( addr=0x60 )
+dw = dw_Controller( addr=0x61 )
 ```
 
 Now that we have the controller created, we can access all the connectors on the board.
 
 #### Select a Motor
 
-There are 6 motor ports on the 640 board numbered 1 to 6 from left to right (with the ports facing you ).
+There are 6 motor ports on the ESCAPE board numbered 1 to 6 from left to right (with the ports facing you ).
 
 If we want to control a motor on port number 1 then we need to request the motor object for that port from our controller - this is very easily done with a single line
 
@@ -251,7 +267,7 @@ We'll start with the main command to stop the motor
 
 ##### off()
 
-The off command will switch off the motor and apply the brakes
+The off command will switch off the motor
 
 ```python
 m1.off()
@@ -297,7 +313,9 @@ m1.setMotorSpeed(-50)
 
 ##### Alternate speed range
 
-If you plan to move from a DC driven robot to an ESC motor powered robot then it makes sense to use the same conventions that will work on both, so you can also use the 1000 to 2000 speed range with the 640 board
+The spped range above is easy to use as you can quickly see what speed is forwards, backwards and stopped. ESC powered motors use a different range that goes from 1000 to 2000, with 1500 (the middle point) being stop.
+
+Both the ESCAPE and 640 boards can use either range, but if you are primarily working with ESC powered motors and Radio Control inputs then you should use this range as it makes programming a lot easier.
 
 To get your motor going forwards at full speed you should set its speed to 2000
 
@@ -323,7 +341,7 @@ As before, any number between 1500 and the maximum in each direction will drive 
 m1.setMotorSpeed(1750)
 ```
 
-and half speed in revers would be 1250
+and half speed in reverse would be 1250
 
 ```python
 m1.setMotorSpeed(1250)
@@ -331,7 +349,7 @@ m1.setMotorSpeed(1250)
 
 #### Select a Servo
 
-There are two servo ports on the 640 board. They are numbered 1 and 2 with number 1 to the left hand side and number 2 the closest to the motor ports.
+There are six servo ports on the ESCAPE board. They are numbered from 1 to 6 with number 1 to the left hand side and number 6 the closest to the power connector.
 
 You select a servo in the same manner as you select motors, by requesting a servo object from the controller - to select the first servo we use:
 
@@ -373,88 +391,18 @@ s1.setPWMmS(2.0) # fully clockwise
 s1.setPWMmS(1.0) # fully counter clockwise
 ```
 
-#### Select a Stepper motor
-
-You can control up to 3 stepper motors with the 640 board - each stepper motor uses two motor ports for 4 wire stepper motors and three motor ports for 5 wire stepper motors. 
-
-Running 5 wire stepper motors is almost the same as 4 wire stepper motos but requires a small extra step which we'll explain at the end.
-
-Each stepper motor is assigned to a pair of motor ports -
-
-- **Stepper motor 1** - uses motor ports 1 and 2
-- **Stepper motor 2** - uses motor ports 3 and 4
-- **Stepper motor 3** - uses motor ports 5 and 6
-
-The first step is to identify the two wires for each coil on your stepper motor (you may need to read the technical documentation for your motor to find this out) and attach these two wires to each port.
-
-*Example: You have a stepper motor with 4 wires - orange, pink, yellow and blue. If the orange and pink wires for your stepper motor are attached to coil one then attach these wires to motor port 1, attach the two remaining wires to motor port 2.*
-
-Once you have your stepper motor wired up you need to request the relevant stepper motor object from the controller.
-
-```python
-stepper1 = dw.getStepper(1)
-```
-
-#### Stepper motor control
-
-There are four commands for stepper motors. The first one you'll recognise
-
-##### off()
-
-The off command will switch off the stepper motor
-
-```python
-stepper1.off()
-```
-
-##### setMotorSpeed( *rpm* )
-
-This command allows you to set the speed of your stepper motor. Pass the number of revolutions per minute that you want your stepper motor to run at.
-
-```python
-stepper1.setMotorSpeed(200)
-```
-
-##### oneStep( *direction*, *style* )
-
-This command will move the stepper motor one step in your chosen direction -
-
-- **dw_Controller.FORWARD** - set the stepper motor to move forward
-- **dw_Controller.REVERSE** - set the stepper motor to move backwards
-
-There are two stepping styles available - 
-
-- **dw_Controller.SINGLE** - this is the simplest method of stepping which activates a single coil at a time to move and hold the motor. This method uses the  least amount of power.
-- **dw_Controller.DOUBLE** - this is a slightly more complex method of stepping which uses to coils to move and hold the motor. This method uses twice as much power as the single step, but is more powerful.
-
-```python
-stepper1.oneStep(dw_Controller.FORWARD, dw_Controller.SINGLE)
-stepper1.oneStep(dw_Controller.REVERSE, dw_Controller.DOUBLE)
-```
-
-##### step( *steps*, *direction*, *style* )
-
-If you want to move the stepper motor a set number of steps then you can use this command. This, however, will stop all processing until the motor has moved the specified number of steps.
-
-```python
-stepper1.step(200, dw_Controller.FORWARD, dw_Controller.SINGLE)
-stepper1.step(200, dw_Controller.REVERSE, dw_Controller.DOUBLE)
-```
-
-If you want more control and need to move two or more motors at the same time then you should use the **oneStep** command.
-
 ### Installing the C++ libraries
 
-The C++ libraries for the 640 board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
+The C++ libraries for the ESCAPE board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
 
 ```bash
-$ git clone https://github.com/darkwaterfoundation/darkwater_cplus_640.git
+$ git clone https://github.com/darkwaterfoundation/darkwater_cplus_escape.git
 ```
 
 Once they are download we can navigate into the new directory and take a look around - so enter:
 
 ```bash
-$ cd ./darkwater_cplus_640
+$ cd ./darkwater_cplus_escape
 ```
 
 Let's list the contents of that new directory by typing
@@ -488,7 +436,7 @@ $ sudo ./Motor
 
 ##### Servo
 
-The servo example will move each of the two servos on the 640 board backwards and forwards six times. To build this demo type the following:
+The servo example will move each of the six servos backwards and forwards six times. To build this demo type the following:
 
 ```bash
 $ cd ./Servo
@@ -503,7 +451,7 @@ $ sudo ./Servo
 
 ##### PPM
 
-The PPM example will read the input from a PPM radio control receiver connected to the CPPM header on the 640 board, interpret the first 6 channels and move the corresponding motors.
+The PPM example will read the input from a PPM radio control receiver connected to the CPPM header on the ESCAPE board, interpret the first 6 channels and move the corresponding servos.
 
 To build this demo type the following:
 
@@ -512,7 +460,7 @@ $ cd ./PPM
 $ make
 ```
 
-Once compiled, attach your CPPM receiver to the CPPM connector (see here CPPM set up) and run the program - you will see the output for each channel on the screen as it runs. Attaching motors to each of the motor connectors will allow you to control them individually by moving the sticks on your RC transmitter.
+Once compiled, attach your CPPM receiver to the CPPM connector (see here CPPM set up) and run the program - you will see the output for each channel on the screen as it runs. Attaching servos to the Servo rail will allow you to control them individually by moving the sticks on your RC transmitter.
 
 ```bash
 $ sudo ./PPM
@@ -520,7 +468,7 @@ $ sudo ./PPM
 
 ##### AccelGyroMag
 
-If you have a 9DoF expansion board on your 640 board or are using a SOAR board then this example will read and output the Gyroscope, Accelerometer and Compass readings.
+If you have a 9DoF expansion board on your ESCAPE board or are using a SOAR board then this example will read and output the Gyroscope, Accelerometer and Compass readings.
 
 To compile and run it, type the following
 
@@ -532,12 +480,12 @@ $ sudo ./AccelGyroMag
 
 ### The C++ API
 
-If you take a look at the code in each of the examples you should be able to get an idea of how the 640 board API works. We'll go into more detail of each of the available commands below. 
+If you take a look at the code in each of the examples you should be able to get an idea of how the ESCAPE board API works. We'll go into more detail of each of the available commands below. 
 
 The first thing we need to do for our program is to import the required libraries - so near the top of your new program you will put
 
 ```c
-#include "darkwater/DW640.h"
+#include "darkwater/DWESCAPE.h"
 #include "darkwater/Util.h"
 #include <stdlib.h>
 ```
@@ -561,10 +509,10 @@ int main()
 
 #### Create a controller
 
-The **DW640** object controls access to all the elements on the 640 board, so the first thing we need to do is create a controller - we pass in the address of the 640 board as a parameter - the default address is 0x60 so if you haven't changed the address then you can leave this out.
+The **DWESCAPE** object controls access to all the elements on the ESCAPE board, so the first thing we need to do is create a controller - we pass in the address of the ESCAPE board as a parameter - the default address is 0x61 so if you haven't changed the address then you can leave this out.
 
 ```c
-DW640 dw(0x60);
+DWESCAPE dw(0x61);
 dw.initialize();
 ```
 
@@ -572,7 +520,7 @@ Now that we have the controller created, we can access all the connectors on the
 
 #### Select a Motor
 
-There are 6 motor ports on the 640 board numbered 1 to 6 from left to right (with the ports facing you ).
+There are 6 motor ports on the ESCAPE board numbered 1 to 6 from left to right (with the ports facing you ).
 
 If we want to control a motor on port number 1 then we need to request the motor object for that port from our controller - this is very easily done with a single line
 
@@ -670,7 +618,7 @@ dw1->setMotorSpeed(1250)
 
 #### Select a Servo
 
-There are two servo ports on the 640 board. They are numbered from 1 and 2 with number 1 to the left hand side and number 2 the closest to the motor connectors.
+There are six servo ports on the ESCAPE board. They are numbered from 1 to 6 with number 1 to the left hand side and number 6 the closest to the power connector.
 
 You select a servo in the same manner as you select motors, by requesting a servo object from the controller - to select the first servo we use:
 
@@ -711,84 +659,6 @@ s1->setPWMmS(1.5); // middle
 s1->setPWMmS(2.0); // fully clockwise
 s1->setPWMmS(1.0); // fully counter clockwise
 ```
-
-#### Select a Stepper motor
-
-You can control up to 3 stepper motors with the 640 board - each stepper motor uses two motor ports for 4 wire stepper motors and three motor ports for 5 wire stepper motors. 
-
-Running 5 wire stepper motors is almost the same as 4 wire stepper motors but requires a small extra step which we'll explain at the end.
-
-Each stepper motor is assigned to a pair of motor ports -
-
-- **Stepper motor 1** - uses motor ports 1 and 2
-- **Stepper motor 2** - uses motor ports 3 and 4
-- **Stepper motor 3** - uses motor ports 5 and 6
-
-The first step is to identify the two wires for each coil on your stepper motor (you may need to read the technical documentation for your motor to find this out) and attach these two wires to each port.
-
-*Example: You have a stepper motor with 4 wires - orange, pink, yellow and blue. If the orange and pink wires for your stepper motor are attached to coil one then attach these wires to motor port 1, attach the two remaining wires to motor port 2.*
-
-Once you have your stepper motor wired up you need to request the relevant stepper motor object from the controller.
-
-```c
-DW_Stepper *st1 = dw.getStepper(1);
-```
-
-The default stepper object created assumes that your stepper motor has 48 steps per revolution - if you motor has more or less steps per revolution then you can specify this using an alterative command:
-
-```c
-DW_Stepper *st1 = dw.getStepper(1, 48);
-```
-
-Change the *48* in the line above to the number of steps your stepper motor has per revolution.
-
-#### Stepper motor control
-
-There are four commands for stepper motors. The first one you'll recognise
-
-##### off()
-
-The off command will switch off the stepper motor
-
-```c
-st1->off();
-```
-
-##### setMotorSpeed( *rpm* )
-
-This command allows you to set the speed of your stepper motor. Pass the number of revolutions per minute that you want your stepper motor to run at.
-
-```c
-st1->setMotorSpeed(200);
-```
-
-##### oneStep( *direction*, *style* )
-
-This command will move the stepper motor one step in your chosen direction -
-
-- **DW_FORWARD** - set the stepper motor to move forward
-- **DW_REVERSE** - set the stepper motor to move backwards
-
-There are two stepping styles available - 
-
-- **DW_SINGLE** - this is the simplest method of stepping which activates a single coil at a time to move and hold the motor. This method uses the  least amount of power.
-- **DW_DOUBLE** - this is a slightly more complex method of stepping which uses to coils to move and hold the motor. This method uses twice as much power as the single step, but is more powerful.
-
-```c
-st1->oneStep(DW_FORWARD, DW_SINGLE);
-st1->oneStep(DW_REVERSE, DW_DOUBLE);
-```
-
-##### step( *steps*, *direction*, *style* )
-
-If you want to move the stepper motor a set number of steps then you can use this command. This, however, will stop all processing until the motor has moved the specified number of steps.
-
-```c
-st1->step( 400, DW_FORWARD, DW_SINGLE );
-st1->step( 400, DW_REVERSE, DW_DOUBLE );
-```
-
-If you want more control and need to move two or more motors at the same time then you should use the **oneStep** command.
 
 ### Compiling your code
 
