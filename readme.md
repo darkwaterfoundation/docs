@@ -11,7 +11,7 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 ![640](/images/640-450.png)
 
 - [Getting started](/640.html#getting-started) find out about your 640 board
-- [Setup your 640](/640.html640.html#setup-your-640) setting up your 640 board ready for use
+- [Setup your 640](/640.html#setup-your-640) setting up your 640 board ready for use
 - [Setting up your Pi](/640.html#setting-up-your-pi) setting up your Raspberry Pi
 - [Wiring everything up](/640.html) connecting your power, motors and servos
 - [Programming in Python](/640.html#programming-the-640-installing-the-python-libraries) the Python API and how to use it
