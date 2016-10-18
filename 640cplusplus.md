@@ -275,7 +275,7 @@ s1->setPWMmS(1.0); // fully counter clockwise
 
 You can control up to 3 stepper motors with the 640 board - each stepper motor uses two motor ports for 4 wire stepper motors and three motor ports for 5 wire stepper motors. 
 
-Running 5 wire stepper motors is almost the same as 4 wire stepper motos but requires a small extra step which we'll explain at the end.
+Running 5 wire stepper motors is almost the same as 4 wire stepper motors but requires a small extra step which we'll explain at the end.
 
 Each stepper motor is assigned to a pair of motor ports:
 - **Stepper motor 1** - uses motor ports 1 and 2
