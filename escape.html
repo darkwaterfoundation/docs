@@ -37,7 +37,9 @@
 
       var hash = window.location.hash;
       if(hash != '') {
-        location.href = hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 2000);
         console.log(hash);
       }
 
