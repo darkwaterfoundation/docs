@@ -178,6 +178,8 @@ You have now enabled the interfaces you need to use your board.
 
 # Wiring up the ESCAPE board
 
+Now that we have your ESCAPE board and Raspberry Pi setup, it's time to connect some motors and servos to it.
+
 ![the ESCAPE board](/images/onlyescape.png)
 
 ## Connecting Servos
