@@ -51,3 +51,11 @@ The expansion boards have small notches on the side (that are called castellated
 We recommend watching this video by Sparkfun before you get started as it goes through the process we'll describe later in a lot of detail.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rGvvwXrv310" frameborder="0" allowfullscreen></iframe>
+
+### Expansion orientation
+
+You'll notice a small white dot next to the expansion area on your main board. If you place the expansion board along side you should be able to see a similar white dot in one corner (labelled **Z**). 
+
+![orientation](/images/expansionorientation.jpg)
+
+When you place the expansion board on the main board, you should line these two dots up.
