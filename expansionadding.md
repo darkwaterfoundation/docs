@@ -24,19 +24,19 @@ The expansion area on the blue SOAR board doesn't have solder pre-applied, so ad
 
 To add an expansion board you will need a few tools and bits and pieces.
 
-**Solering iron**
+### Solering iron
 
 I assume you already own a soldering iron, but in case you don't, we recommend getting an iron with a digital temperature control. They may be slightly more expensive than the soldering irons that just plug into the power socket but if you are going to be doing a lot of soldering then it's worth it in the end.
 
-**Solder**
+### Solder
 
 We use Lead Free solder here, but if you prefer leaded then that should be fine as well.
 
-**Flux pen**
+### Flux pen
 
 A Flux pen is a *must have* item really - you will never regret buying one. We use this one - [Electrolube SMF12P Surface Mount Rework Flux Pen 12ml](https://www.rapidonline.com/electrolube-smf12p-surface-mount-rework-flux-pen-12ml-single-87-4426)
 
-**Flux remover**
+### Flux remover
 
 Flux, whilst useful, can leave nasty sticky areas on your board. You should always use flux remover on your board once you've soldered it to remove it and make things nice again.
 
@@ -46,7 +46,7 @@ We use this one - [Ambersil 30216-AB Flux Remover 400ml](https://www.rapidonline
 
 The expansion boards have small notches on the side (that are called castellated vias) that we need to solder to the pads on the main board. Soldering these maybe new to you and seem a bit daunting - don't worry though as it's not as difficult as it looks.
 
-**Sparkfun tutorial**
+### Sparkfun tutorial
 
 We recommend watching this video by Sparkfun before you get started as it goes through the process we'll describe later in a lot of detail.
 
