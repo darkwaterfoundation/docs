@@ -100,5 +100,10 @@ Add more flux to that pad (and the exapnsion board pade and notch) and, with som
 
 You'll need to leave it there for a little bit longer than you did with the other pads, but it will heat up after a few seconds and you'll see the solder flow in the same manner.
 
+![Expansion edge](/images/expansionedge.jpg)
+
 Congratulations - you have now attached your expansion board. 
+
+![Expansion side](/images/expansionside.jpg)
+
 
