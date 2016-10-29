@@ -67,3 +67,7 @@ Now we'll need to enable the SPI interface, so move down to the *SPI* menu and p
 When you are returned to the main menu, move down to the *Finish* option (pressing the right arrow key twice will get you there) and press enter.
 
 You have now enabled the interface you need to use your board.
+
+## Reboot your Pi
+
+Once you have enabled the interfaces you will need to reboot your Raspberry Pi so that the required libraries can be loaded. This is an important step and your code won't run correctly without it.

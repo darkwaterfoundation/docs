@@ -40,7 +40,7 @@ The power connection should accept 5v DC - the power you connect here is isolate
 
 ### Expansion area
 
-![640 Motors](/images/escape-expansionarea.png)
+![ESCAPE Expansion](/images/escape-expansionarea.png)
 
 This area to the right of the board is for adding extra expansion boards to increase the functionality available to you. For more information on adding expansion boards [look here](/expansionadding.html)
 
@@ -175,6 +175,10 @@ Go to the *Advanced Options* again and do the same for *SPI*
 This time when you are returned to the main menu, move down to the *Finish* option (pressing the right arrow key twice will get you there) and press enter.
 
 You have now enabled the interfaces you need to use your board.
+
+## Reboot your Pi
+
+Once you have enabled the interfaces you will need to reboot your Raspberry Pi so that the required libraries can be loaded. This is an important step and your code won't run correctly without it.
 
 # Wiring up the ESCAPE board
 
