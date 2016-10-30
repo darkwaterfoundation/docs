@@ -10,13 +10,15 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 
 ![640](/images/640-450.png)
 
-- [Getting started](/640gettingstarted.html) setting up your 640 board ready for use
-- [Wiring everything up](/640wiring.html) connecting your power, motors and servos
-- [Programming in Python](/640python.html) the Python API and how to use it
-- [Programming in C++](/640cplusplus.html) controlling the board in C++
+- [Getting started](/640.html#getting-started) find out about your 640 board
+- [Setup your 640](/640.html#setup-your-640) setting up your 640 board ready for use
+- [Setting up your Pi](/640.html#setting-up-your-pi) setting up your Raspberry Pi
+- [Wiring everything up](/640.html) connecting your power, motors and servos
+- [Programming in Python](/640.html#programming-the-640-installing-the-python-libraries) the Python API and how to use it
+- [Programming in C++](/640.html#programming-the-640-installing-the-c-libraries) controlling the board in C++
 - [Set up RC Input]() reading input from your RC receiver
 - [Expanding](/expansionadding.html) adding extra expansion boards
-- [Get Advanced](/640advanced.html) more advanced things you can do
+- [Get Advanced]() more advanced things you can do
 
 [Pre-Order a 640 board >](https://darkwater.io/product/640-dc-motor-control-board/)
 
@@ -26,13 +28,15 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 
 ![escape](/images/escape-450.png)
 
-- [Getting started](/escapegettingstarted.html) setting up your ESCAPE board ready for use
-- [Wiring everything up](/escapewiring.html) connecting your power, motors and servos
-- [Programming in Python](/escapepython.html) the Python API and how to use it
-- [Programming in C++](/escapecplusplus.html) controlling the board in C++
+- [Getting started](/escape.html#getting-started) find out about your ESCAPE board
+- [Setup your ESCAPE](/escape.html#setup-your-escape) setting up your ESCAPE board ready for use
+- [Setting up your Pi](/escape.html#setting-up-your-pi) setting up your Raspberry Pi
+- [Wiring everything up](/escape.html) connecting your power, motors and servos
+- [Programming in Python](/escape.html#programming-the-escape-installing-the-python-libraries) the Python API and how to use it
+- [Programming in C++](/escape.html#programming-the-escape-installing-the-c-libraries) controlling the board in C++
 - [Set up RC Input]() reading input from your RC receiver
 - [Expanding](/expansionadding.html) adding extra expansion boards
-- [Get Advanced](/escapeadvanced.html) more advanced things you can do
+- [Get Advanced]() more advanced things you can do
 
 [Pre-Order an ESCAPE board >](https://darkwater.io/product/escape-esc-powered-motor-control-board/)
 
@@ -42,7 +46,7 @@ The SOAR board is a holder for advanced sensors. It is ideal for use with differ
 
 ![soar](/images/soar-450.png)
 
-- [Getting started](/soargettingstarted.html) setting up your SOAR board ready for use
+- [Getting started](/soar.html) setting up your SOAR board ready for use
 - [Adding an expansion board](/expansionadding.html) adding an expansion board
 - [Reading data]() reading the sensor data
 
