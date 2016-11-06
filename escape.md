@@ -198,7 +198,7 @@ Now that we have your ESCAPE board and Raspberry Pi setup, it's time to connect 
 The Python libraries for the ESCAPE board and some example scripts are available via our GitHub repository. To install them open a terminal window on your Raspberry Pi (unless you are running with only the command line) and enter the following:
 
 ```bash
-$ git clone https://github.com/darkwaterfoundation/darkwater_python_escape.git
+$ git clone https://github.com/darkwaterio/darkwater_python_escape.git
 ```
 
 Next you need to navigate into the new directory so enter:
