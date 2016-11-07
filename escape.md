@@ -192,7 +192,7 @@ Servos can be connected to the six servo connections to the right hand side of t
 
 If you are using ESCs to also power motors, then you also attach the BEC coonection to one of the Servo connections to provide 5v for the Servos.
 
-![640 servo](/images/servo640.png) 
+![640 servo](/images/servoescape.png) 
 
 ## Connecting Motors
 ## Connecting the power
