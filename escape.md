@@ -195,7 +195,6 @@ If you are using ESCs to also power motors, then you also attach the BEC coonect
 ![640 servo](/images/servoescape.png) 
 
 ## Connecting Motors
-## Connecting the power
 ## Connecting your RC receiver 
 
 The RC receiver is connected to the 3-pin connector on the far left of the board. Your Radio Control (RC) receiver should be capable of outputting CPPM or PPM-SUM signals. For some RC receivers need a jumper placed across two pins in order to enable this mode (as is the case with the D4R-II receiver displayed).
@@ -203,6 +202,8 @@ The RC receiver is connected to the 3-pin connector on the far left of the board
 Once you have your RC receiver connected to the board and bound (linked) to yur RC transmitter, you should run the C++ PPM decoder example code ([below](#programming-the-escape-installing-the-c-libraries)) to make sure that the signals are being received correctly.
 
 ![EScape RC receiver](/images/rcescape.png)
+
+## Advanced setup
 
 # Programming the ESCAPE
 
