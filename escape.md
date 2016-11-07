@@ -187,6 +187,13 @@ Now that we have your ESCAPE board and Raspberry Pi setup, it's time to connect 
 ![the ESCAPE board](/images/onlyescape.png)
 
 ## Connecting Servos
+
+Servos can be connected to the six servo connections to the right hand side of the board. The ESCAPE board is setup to provide power to the Servos from the Raspberry Pi's 5v power if the **Power** jumper is in place (and no power supply is connected to the external 5v connection), otherwise you will need to provide 5v from the external connection for the Servos.
+
+If you are using ESCs to also power motors, then you also attach the BEC coonection to one of the Servo connections to provide 5v for the Servos.
+
+![640 servo](/images/servo640.png) 
+
 ## Connecting Motors
 ## Connecting the power
 ## Connecting your RC receiver 
