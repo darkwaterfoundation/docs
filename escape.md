@@ -191,6 +191,12 @@ Now that we have your ESCAPE board and Raspberry Pi setup, it's time to connect 
 ## Connecting the power
 ## Connecting your RC receiver 
 
+The RC receiver is connected to the 3-pin connector on the far left of the board. Your Radio Control (RC) receiver should be capable of outputting CPPM or PPM-SUM signals. For some RC receivers need a jumper placed across two pins in order to enable this mode (as is the case with the D4R-II receiver displayed).
+
+Once you have your RC receiver connected to the board and bound (linked) to yur RC transmitter, you should run the C++ PPM decoder example code ([below](#programming-the-escape-installing-the-c-libraries)) to make sure that the signals are being received correctly.
+
+![EScape RC receiver](/images/rcescape.png)
+
 # Programming the ESCAPE
 
 ## Installing the Python libraries
