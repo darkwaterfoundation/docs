@@ -201,9 +201,15 @@ The RC receiver is connected to the 3-pin connector on the far left of the board
 
 Once you have your RC receiver connected to the board and bound (linked) to yur RC transmitter, you should run the C++ PPM decoder example code ([below](#programming-the-escape-installing-the-c-libraries)) to make sure that the signals are being received correctly.
 
-![EScape RC receiver](/images/rcescape.png)
+![ESCAPE RC receiver](/images/rcescape.png)
 
 ## Advanced setup
+
+## ESCAPE Pinout
+
+The pins used by the ESCAPE board are shown in the diagram below. All GND pins are linked so have all been marked.
+
+![ESCAPE Pinout](/images/escapepinout.png)
 
 # Programming the ESCAPE
 
