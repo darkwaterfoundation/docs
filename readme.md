@@ -20,7 +20,7 @@ The 640 (Six for Zero) board is a DC and Stepper motor control board capable of 
 - [Expanding](/expansionadding.html) adding extra expansion boards
 - [Get Advanced]() more advanced things you can do
 
-[Pre-Order a 640 board >](https://darkwater.io/product/640-dc-motor-control-board/)
+[Order a 640 board >](https://darkwater.io/product/640-dc-motor-control-board/)
 
 ## The ESCAPE board
 
@@ -38,7 +38,7 @@ The ESCAPE (ESC-cape) board was designed to provide a method of using brushless 
 - [Expanding](/expansionadding.html) adding extra expansion boards
 - [Get Advanced]() more advanced things you can do
 
-[Pre-Order an ESCAPE board >](https://darkwater.io/product/escape-esc-powered-motor-control-board/)
+[Order an ESCAPE board >](https://darkwater.io/product/escape-esc-powered-motor-control-board/)
 
 ## The SOAR board
 
@@ -50,7 +50,7 @@ The SOAR board is a holder for advanced sensors. It is ideal for use with differ
 - [Adding an expansion board](/expansionadding.html) adding an expansion board
 - [Reading data]() reading the sensor data
 
-[Pre-Order a SOAR board >](https://darkwater.io/product/soar-expansion-board-holder/)
+[Order a SOAR board >](https://darkwater.io/product/soar-expansion-board-holder/)
 
 ## Tutorials
 
